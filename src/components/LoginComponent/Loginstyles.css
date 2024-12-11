@@ -1,0 +1,48 @@
+@media (max-width: 1124px) {
+  .heading1 {
+    display: none;
+  }
+
+  .logincontainer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .heading2 {
+    display: block;
+  }
+  .loginform {
+    width: 100%;
+    padding: 20px;
+  }
+  .imgsection {
+    text-align: center;
+  }
+  .loginimage {
+    display: inline-block;
+  }
+  .loginpic {
+    width: 240px;
+    height: 240px;
+  }
+  #useremai,
+  #userpassword {
+    padding: 8px;
+  }
+  .usremai,
+  .usrpassword {
+    margin-bottom: 8px;
+  }
+  .forgotpassword {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1125px) {
+  .heading2 {
+    display: none;
+  }
+  .heading1 {
+    display: block;
+  }
+}
