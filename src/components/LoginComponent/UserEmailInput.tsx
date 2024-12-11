@@ -13,7 +13,7 @@ const EmailInput: React.FC<EmailInputProps> = ({
   placeholder,
 }) => {
   return (
-    <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-sm mb-6 ">
+    <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-6 ">
       {/* Icon */}
       <div className="">
         <FaUser className="w-6 h-6" />
