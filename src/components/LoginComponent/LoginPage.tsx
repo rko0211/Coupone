@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
             <div className="formoptions w-full">
               <label
                 htmlFor="useremai"
-                className="usremai text-customLabelColor font-semibold block lg:mb-3"
+                className="usremai text-customLabelColor font-semibold block ml-3 lg:mb-3"
               >
                 User name / Email
               </label>
@@ -41,7 +41,7 @@ const LoginPage: React.FC = () => {
 
               <label
                 htmlFor="userpassword"
-                className="usrpassword text-customLabelColor font-semibold block lg:mb-3"
+                className="usrpassword text-customLabelColor font-semibold block ml-3 lg:mb-3"
               >
                 Password
               </label>
