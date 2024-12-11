@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
               </label>
               <PasswordInput value={password} onChange={setPassword} />
 
-              <div className=" forgotpassword flex justify-between items-center md:mb-10">
+              <div className=" forgotpassword flex justify-between items-center lg:mb-10">
                 <label className="flex items-center">
                   <input type="checkbox" className="mr-2 w-5 h-5 rounded-sm" />
                   <span className="text-customLabelColor font-semibold">
