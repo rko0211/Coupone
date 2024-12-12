@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import loginFrame from "../../assets/loginFrame.png";
 
 import EmailInput from "./UserEmailInput";
 import PasswordInput from "./UserPassword";
 
-import "./Loginstyles.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  useremail: string;
+  userpassword: string;
+};
 
 const LoginPage: React.FC = () => {
-  const [useremail, setUseremail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+  };
 
   return (
-    <div className=" logincontainer min-h-[100vh] flex flex-1 justify-center items-center lg:gap-10">
-      <div className="loginform mt-0 lg:mt-10">
+    <div className=" logincontainer min-h-[100vh] flex flex-wrap-reverse justify-center items-center gap-0  customlg:gap-10 ">
+      <div className="loginform customMax:w-full customMax:p-5 customMax:mt-0 lg:mt-10">
         {/* Heading Part */}
-        <div className="heading1 text-center">
+        <div className="heading1 block customMax:hidden  text-center">
           <h2 className="welcomeheading font-bold text-4xl lg:mb-4">
             Welcome Back!
           </h2>
@@ -25,29 +38,25 @@ const LoginPage: React.FC = () => {
 
         {/* Form Part */}
         <div className="formdiv flex flex-col items-center">
-          <form action="" className="w-full">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="formoptions w-full">
               <label
-                htmlFor="useremai"
-                className="usremai text-customLabelColor font-semibold block ml-3 lg:mb-3"
+                htmlFor="useremail"
+                className="usremail text-customLabelColor font-semibold block ml-3 customMax:mb-3 customlg:mb-3"
               >
                 User name / Email
               </label>
-              <EmailInput
-                value={useremail}
-                onChange={setUseremail}
-                placeholder="example@gmail.com"
-              />
+              <EmailInput placeholder="example@gmail.com" register={register} />
 
               <label
                 htmlFor="userpassword"
-                className="usrpassword text-customLabelColor font-semibold block ml-3 lg:mb-3"
+                className="usrpassword text-customLabelColor font-semibold block ml-3 customMax:mb-3 customlg:mb-3"
               >
                 Password
               </label>
-              <PasswordInput value={password} onChange={setPassword} />
+              <PasswordInput register={register} />
 
-              <div className=" forgotpassword flex justify-between items-center lg:mb-10">
+              <div className=" forgotpassword flex justify-between items-center lg:mb-10 customMax:mb-5">
                 <label className="flex items-center">
                   <input type="checkbox" className="mr-2 w-5 h-5 rounded-sm" />
                   <span className="text-customLabelColor font-semibold">
@@ -65,6 +74,7 @@ const LoginPage: React.FC = () => {
               <button
                 type="submit"
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold"
+                disabled={isSubmitting}
               >
                 Log in
               </button>
@@ -83,9 +93,9 @@ const LoginPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="imgsection">
+      <div className="imgsection customMax:text-center">
         {/* Heading Part */}
-        <div className="heading2 text-center mt-10 ">
+        <div className="heading2 hidden customMax:block text-center mt-10 ">
           <h2 className="welcomeheading font-bold text-4xl mb-1">
             Welcome Back!
           </h2>
@@ -95,8 +105,12 @@ const LoginPage: React.FC = () => {
         </div>
 
         {/* Image part */}
-        <div className="loginimage">
-          <img src={loginFrame} alt="Login Image" className="loginpic h-auto" />
+        <div className="loginimage  customMax:inline-block">
+          <img
+            src={loginFrame}
+            alt="Login Image"
+            className="loginpic h-auto customMax:w-[200px] customMax:h-[200px]"
+          />
         </div>
       </div>
     </div>

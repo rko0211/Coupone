@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { HiMiniEye } from "react-icons/hi2";
 import { HiEyeSlash } from "react-icons/hi2";
+import { UseFormRegister } from "react-hook-form";
 
 interface PasswordInputProps {
-  value: string;
-  onChange: (value: string) => void;
+  register: UseFormRegister<any>;
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ value, onChange }) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ register }) => {
   const [passwordType, setPasswordType] = useState<boolean>(false);
   const togglePasswordVisibility = () => {
     setPasswordType((prev) => !prev);
   };
+
   return (
     <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-6 ">
       {/* Icon */}
@@ -22,10 +23,11 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ value, onChange }) => {
 
       <input
         type={passwordType ? "text" : "password"}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
         id="userpassword"
-        className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full"
+        className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
+        {...register("userpassword", {
+          required: true,
+        })}
         required
       />
       {/* Icon */}
