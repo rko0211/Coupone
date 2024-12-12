@@ -42,7 +42,7 @@ const LoginPage: React.FC = () => {
             <div className="formoptions w-full">
               <label
                 htmlFor="useremail"
-                className="usremail text-customLabelColor font-semibold block ml-3 customMax:mb-3 customlg:mb-3"
+                className="usremail text-customLabelColor font-semibold block ml-5 customMax:mb-3 customlg:mb-3"
               >
                 User name / Email
               </label>
@@ -50,13 +50,13 @@ const LoginPage: React.FC = () => {
 
               <label
                 htmlFor="userpassword"
-                className="usrpassword text-customLabelColor font-semibold block ml-3 customMax:mb-3 customlg:mb-3"
+                className="usrpassword text-customLabelColor font-semibold block ml-5 customMax:mb-3 customlg:mb-3"
               >
                 Password
               </label>
               <PasswordInput register={register} />
 
-              <div className=" forgotpassword flex justify-between items-center lg:mb-10 customMax:mb-5">
+              <div className=" forgotpassword flex justify-between items-center lg:mb-9 customMax:mb-5">
                 <label className="flex items-center">
                   <input type="checkbox" className="mr-2 w-5 h-5 rounded-sm" />
                   <span className="text-customLabelColor font-semibold">

@@ -15,7 +15,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ register }) => {
   };
 
   return (
-    <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-6 ">
+    <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-5 ">
       {/* Icon */}
       <div className="">
         <RiLockPasswordFill className="w-6 h-6" />
