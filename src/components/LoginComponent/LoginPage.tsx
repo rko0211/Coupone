@@ -15,8 +15,8 @@ const LoginPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors, isSubmitting },
+    // watch,
+    formState: { isSubmitting },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
