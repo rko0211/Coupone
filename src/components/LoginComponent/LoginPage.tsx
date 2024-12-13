@@ -1,10 +1,11 @@
 import React from "react";
 import loginFrame from "../../assets/loginFrame.png";
 
-import EmailInput from "./UserEmailInput";
-import PasswordInput from "./UserPassword";
+import EmailField from "../commoncomponents/EmailField";
+import PasswordField from "../commoncomponents/PasswordField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 
 type Inputs = {
   useremail: string;
@@ -28,7 +29,7 @@ const LoginPage: React.FC = () => {
       <div className="loginform customMax:w-full customMax:p-5 customMax:mt-0 lg:mt-10">
         {/* Heading Part */}
         <div className="heading1 block customMax:hidden  text-center">
-          <h2 className="welcomeheading font-bold text-4xl lg:mb-4">
+          <h2 className="welcomeheading font-bold text-3xl md:text-4xl lg:mb-4">
             Welcome Back!
           </h2>
           <p className="welcomeparagraph mb-6 text-customGray">
@@ -46,7 +47,11 @@ const LoginPage: React.FC = () => {
               >
                 User name / Email
               </label>
-              <EmailInput placeholder="example@gmail.com" register={register} />
+              <EmailField
+                placeholder="example@gmail.com"
+                register={register}
+                id="useremail"
+              />
 
               <label
                 htmlFor="userpassword"
@@ -54,7 +59,11 @@ const LoginPage: React.FC = () => {
               >
                 Password
               </label>
-              <PasswordInput register={register} />
+              <PasswordField
+                register={register}
+                id="userpassword"
+                name="userpassword"
+              />
 
               <div className=" forgotpassword flex justify-between items-center lg:mb-9 customMax:mb-5">
                 <label className="flex items-center">
@@ -64,12 +73,12 @@ const LoginPage: React.FC = () => {
                   </span>
                 </label>
 
-                <a
-                  href="/forgot-password"
+                <NavLink
+                  to="/forget-password"
                   className="text-customGreenColor font-semibold"
                 >
                   Forgot Password
-                </a>
+                </NavLink>
               </div>
               <button
                 type="submit"
@@ -83,12 +92,12 @@ const LoginPage: React.FC = () => {
 
           <p className="mt-5">
             Don't have an account
-            <a
-              href="/sing-up"
+            <NavLink
+              to="/Sign-up"
               className="text-customGreenColor font-semibold ml-4"
             >
               Sign up Now
-            </a>
+            </NavLink>
           </p>
         </div>
       </div>
@@ -96,7 +105,7 @@ const LoginPage: React.FC = () => {
       <div className="imgsection customMax:text-center">
         {/* Heading Part */}
         <div className="heading2 hidden customMax:block text-center mt-10 ">
-          <h2 className="welcomeheading font-bold text-4xl mb-1">
+          <h2 className="welcomeheading font-bold text-3xl md:text-4xl mb-1">
             Welcome Back!
           </h2>
           <p className="welcomeparagraph mb-2 p-5 text-customGray">

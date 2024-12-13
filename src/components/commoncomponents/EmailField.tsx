@@ -4,11 +4,13 @@ import { UseFormRegister } from "react-hook-form";
 interface EmailInputProps {
   placeholder?: string;
   register: UseFormRegister<any>;
+  id: string;
 }
 
-const EmailForForgetPassword: React.FC<EmailInputProps> = ({
+const EmailField: React.FC<EmailInputProps> = ({
   placeholder,
   register,
+  id,
 }) => {
   return (
     <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-6 ">
@@ -20,7 +22,7 @@ const EmailForForgetPassword: React.FC<EmailInputProps> = ({
       <input
         type="email"
         placeholder={placeholder}
-        id="useremail"
+        id={id}
         className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
         {...register("useremail", {
           required: true,
@@ -31,4 +33,4 @@ const EmailForForgetPassword: React.FC<EmailInputProps> = ({
   );
 };
 
-export default EmailForForgetPassword;
+export default EmailField;

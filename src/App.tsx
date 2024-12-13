@@ -1,11 +1,24 @@
 import ForgetPasswordPage from "./components/ForgetPassword/ForgetPasswordPage";
-// import LoginPage from "./components/LoginComponent/LoginPage";
+import LoginPage from "./components/LoginComponent/LoginPage";
+// import Checkemail from "./components/checkemail/Checkemail";
 
+// import CreateNewPassword from "./components/createnewpassword/CreateNewPassword";
+
+import RegisterPage from "./components/signup/RegisterPage";
+import { Route, Routes } from "react-router-dom";
 const App: React.FC = () => {
   return (
     <>
-      {/* <LoginPage /> */}
-      <ForgetPasswordPage />
+      <LoginPage />
+      {/* <ForgetPasswordPage />
+      <RegisterPage />
+      <CreateNewPassword />
+      <Checkemail /> */}
+      <Routes>
+        <Route path="/Sign-in" element={<LoginPage />} />
+        <Route path="/forget-password" element={<ForgetPasswordPage />} />
+        <Route path="/Sign-up" element={<RegisterPage />} />
+      </Routes>
     </>
   );
 };

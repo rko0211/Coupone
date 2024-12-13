@@ -3,7 +3,7 @@ import forgetpasswordImage from "../../assets/bro.png";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import EmailForForgetPassword from "./EmailForForgetPassword";
+import EmailField from "../commoncomponents/EmailField";
 
 type Inputs = {
   useremail: string;
@@ -40,14 +40,15 @@ const ForgetPasswordPage: React.FC = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="formoptions w-full">
               <label
-                htmlFor="useremail"
+                htmlFor="forgotUseremail"
                 className="usremail text-customLabelColor font-semibold block ml-5 customMax:mb-3 customlg:mb-3"
               >
                 Email
               </label>
-              <EmailForForgetPassword
+              <EmailField
                 placeholder="Enter Your Email"
                 register={register}
+                id="forgotUseremail"
               />
 
               <button
@@ -79,7 +80,7 @@ const ForgetPasswordPage: React.FC = () => {
           <img
             src={forgetpasswordImage}
             alt="ForgetPassword Image"
-            className="loginpic h-auto customMax:w-[200px] customMax:h-[200px]"
+            className="loginpic h-auto customMax:w-[240px] customMax:h-[216px]"
           />
         </div>
       </div>

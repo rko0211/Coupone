@@ -10,6 +10,8 @@ export default {
         customFieldColor: '#D9D9D9',
         customLabelColor: '#404040',
         customGreenColor: '#248D50',
+        customgraydark: ' #888888'
+
       },
       screens: {
         customMax: { max: '1124px' },

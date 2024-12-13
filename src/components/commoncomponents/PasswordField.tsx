@@ -6,9 +6,15 @@ import { UseFormRegister } from "react-hook-form";
 
 interface PasswordInputProps {
   register: UseFormRegister<any>;
+  id: string;
+  name: string;
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = ({ register }) => {
+const PasswordField: React.FC<PasswordInputProps> = ({
+  register,
+  id,
+  name,
+}) => {
   const [passwordType, setPasswordType] = useState<boolean>(false);
   const togglePasswordVisibility = () => {
     setPasswordType((prev) => !prev);
@@ -23,9 +29,9 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ register }) => {
 
       <input
         type={passwordType ? "text" : "password"}
-        id="userpassword"
+        id={id}
         className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
-        {...register("userpassword", {
+        {...register(`${name}`, {
           required: true,
         })}
         required
@@ -33,13 +39,13 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ register }) => {
       {/* Icon */}
       <div className="cursor-pointer" onClick={togglePasswordVisibility}>
         {passwordType ? (
-          <HiEyeSlash className="w-6 h-6 cursor-pointer" />
-        ) : (
           <HiMiniEye className="w-6 h-6 cursor-pointer" />
+        ) : (
+          <HiEyeSlash className="w-6 h-6 cursor-pointer" />
         )}
       </div>
     </div>
   );
 };
 
-export default PasswordInput;
+export default PasswordField;
