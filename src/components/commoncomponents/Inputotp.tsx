@@ -1,6 +1,6 @@
 import React from "react";
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
-
+import { UseFormRegister } from "react-hook-form";
 import {
   InputOTP,
   InputOTPGroup,
@@ -20,10 +20,8 @@ const Inputotp: React.FC<PhoneNumberInputProps> = ({ register, name }) => {
         <InputOTP
           maxLength={6}
           pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
-          {...register(`${name}`, {
-            required: true,
-          })}
           required
+          {...register(`${name}`, { required: true })}
         >
           <InputOTPGroup className="flex gap-3">
             <InputOTPSlot

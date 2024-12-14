@@ -6,8 +6,7 @@ import Inputotp from "../commoncomponents/Inputotp";
 import { NavLink } from "react-router-dom";
 
 type Inputs = {
-  useremail: boolean;
-  userphone: boolean;
+  emailotpfield: string; // Updated type to reflect array structure
 };
 
 const EmailOtpVerification: React.FC = () => {
@@ -19,7 +18,7 @@ const EmailOtpVerification: React.FC = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    console.log("Form Data:", data);
   };
 
   return (

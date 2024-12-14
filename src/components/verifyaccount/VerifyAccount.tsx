@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 type Inputs = {
   useremail: boolean;
   userphone: boolean;
+  emailcheck: boolean;
+  phonecheck: boolean;
 };
 
 const VerifyAccount: React.FC = () => {
@@ -23,6 +25,7 @@ const VerifyAccount: React.FC = () => {
     } else if (data.phonecheck) {
       navigate("/phoneverification");
     }
+
     console.log(data);
   };
 
