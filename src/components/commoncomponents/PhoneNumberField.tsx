@@ -7,12 +7,14 @@ interface PhoneNumberInputProps {
   register: UseFormRegister<any>;
   id: string;
   placeholder: string;
+  name: string;
 }
 
 const PhoneNumberField: React.FC<PhoneNumberInputProps> = ({
   register,
   id,
   placeholder,
+  name,
 }) => {
   return (
     <div className="flex items-center gap-2 rounded-lg mb-5 ">
@@ -37,7 +39,7 @@ const PhoneNumberField: React.FC<PhoneNumberInputProps> = ({
           placeholder={placeholder}
           id={id}
           className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
-          {...register("userphone", { required: true })}
+          {...register(`${name}`, { required: true })}
           required
         />
       </div>

@@ -5,12 +5,14 @@ interface EmailInputProps {
   placeholder?: string;
   register: UseFormRegister<any>;
   id: string;
+  name: string;
 }
 
 const EmailField: React.FC<EmailInputProps> = ({
   placeholder,
   register,
   id,
+  name,
 }) => {
   return (
     <div className="flex items-center gap-2 p-2 bg-customFieldColor rounded-lg mb-6 ">
@@ -24,7 +26,7 @@ const EmailField: React.FC<EmailInputProps> = ({
         placeholder={placeholder}
         id={id}
         className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
-        {...register("useremail", {
+        {...register(`${name}`, {
           required: true,
         })}
         required

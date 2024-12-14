@@ -20,8 +20,8 @@ const Checkemail: React.FC = () => {
   // };
 
   return (
-    <div className=" logincontainer min-h-[100vh] flex flex-wrap-reverse justify-center items-center gap-0  customlg:gap-10 ">
-      <div className="loginform customMax:w-full customMax:p-5 customMax:-mt-40 lg:mt-10">
+    <div className="logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0  customlg:gap-10 ">
+      <div className="loginform customMax:w-full customMax:p-5 lg:mt-10">
         {/* Heading Part */}
         <div className="heading1 block customMax:hidden  text-center">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl lg:mb-4">
