@@ -19,9 +19,7 @@ const VerifyField: React.FC<EmailInputProps> = ({
         type="checkbox"
         id={id}
         className="cursor-pointer ml-4"
-        {...register(`${name}`, {
-          required: true,
-        })}
+        {...register(`${name}`)}
       />
       <label
         className="text-black font-medium w-full py-5 customMax:py-4 cursor-pointer"

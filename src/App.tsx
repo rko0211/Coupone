@@ -7,20 +7,20 @@ import CreateNewPassword from "./components/createnewpassword/CreateNewPassword"
 import RegisterPage from "./components/signup/RegisterPage";
 import { Route, Routes } from "react-router-dom";
 import VerifyAccount from "./components/verifyaccount/VerifyAccount";
+import EmailOtpVerification from "./components/otpverification/EmailOtpVerification";
+import PhoneOtpVerification from "./components/otpverification/PhoneOtpVerification";
 const App: React.FC = () => {
   return (
     <>
-      <LoginPage />
-      <ForgetPasswordPage />
-      <RegisterPage />
-      <CreateNewPassword />
-      <Checkemail />
-      <VerifyAccount />
-
       <Routes>
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
         <Route path="/Sign-up" element={<RegisterPage />} />
+        <Route path="/emailverification" element={<EmailOtpVerification />} />
+        <Route path="/phoneverification" element={<PhoneOtpVerification />} />
+        <Route path="/changeverificationmode" element={<VerifyAccount />} />
+        <Route path="/createnewpassword" element={<CreateNewPassword />} />
+        <Route path="/checkemail" element={<Checkemail />} />
       </Routes>
     </>
   );

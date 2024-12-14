@@ -1,28 +1,24 @@
 import React from "react";
 
-import verify_account from "../../assets/verify_account.png";
+import otpverification from "../../assets/otpverification.png";
 import { useForm, SubmitHandler } from "react-hook-form";
-import VerifyField from "../commoncomponents/VerifyField";
-import { useNavigate } from "react-router-dom";
+import Inputotp from "../commoncomponents/Inputotp";
+import { NavLink } from "react-router-dom";
+
 type Inputs = {
   useremail: boolean;
   userphone: boolean;
 };
 
-const VerifyAccount: React.FC = () => {
+const PhoneOtpVerification: React.FC = () => {
   const {
     register,
     handleSubmit,
     // watch,
     formState: { isSubmitting },
   } = useForm<Inputs>();
-  const navigate = useNavigate();
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    if (data.emailcheck) {
-      navigate("/emailverification");
-    } else if (data.phonecheck) {
-      navigate("/phoneverification");
-    }
     console.log(data);
   };
 
@@ -32,40 +28,39 @@ const VerifyAccount: React.FC = () => {
         {/* Heading Part */}
         <div className="heading1 block customMax:hidden  text-center">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl lg:mb-4">
-            Verify Your Account
+            OTP Verification
           </h2>
           <p className="welcomeparagraph mb-6 max-w-[524.067px] text-customGray">
-            To continue, please provide your email address where we can send the
-            One-Time Password (OTP).
+            Enter the One-Time Password (OTP) sent to your registered phone
+            number +91 8343805693.
           </p>
         </div>
 
         {/* Form Part */}
         <div className="formdiv flex flex-col items-center">
-          <form className="w-full">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="formoptions w-full">
-              <VerifyField
-                register={register}
-                id="checkemail"
-                name="emailcheck"
-                content="Continue With Email"
-              />
-
-              <VerifyField
-                register={register}
-                id="checkphone"
-                name="phonecheck"
-                content="Continue With Phone Number"
-              />
+              <Inputotp register={register} name="phoneotpfield" />
 
               <button
-                onClick={handleSubmit(onSubmit)}
                 type="submit"
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold"
                 disabled={isSubmitting}
               >
-                Send OTP
+                Verify OTP
               </button>
+
+              <p className="w-full flex items-center flex-wrap gap-4 justify-center mt-5">
+                <span className="text-customgraydark font-semibold">
+                  Prefer to verify with your phone number?
+                </span>
+                <NavLink
+                  to="/changeverificationmode"
+                  className="text-customGreenColor font-semibold"
+                >
+                  Verify with Email
+                </NavLink>
+              </p>
             </div>
           </form>
         </div>
@@ -75,18 +70,18 @@ const VerifyAccount: React.FC = () => {
         {/* Heading Part */}
         <div className="heading2 hidden customMax:block text-center mt-10 ">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl mb-1">
-            Verify Your Account
+            OTP Verification
           </h2>
           <p className="welcomeparagraph mb-2 p-5 text-customGray">
-            To continue, please provide your email address where we can send the
-            One-Time Password (OTP).
+            Enter the One-Time Password (OTP) sent to your registered phone
+            number +91 8343805693..
           </p>
         </div>
 
         {/* Image part */}
         <div className="loginimage  customMax:inline-block">
           <img
-            src={verify_account}
+            src={otpverification}
             alt="Login Image"
             className="loginpic h-auto customMax:w-[240px] customMax:h-[240px]"
           />
@@ -96,4 +91,4 @@ const VerifyAccount: React.FC = () => {
   );
 };
 
-export default VerifyAccount;
+export default PhoneOtpVerification;

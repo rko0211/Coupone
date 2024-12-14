@@ -27,7 +27,7 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className=" logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0  customlg:gap-10 ">
+    <div className=" logincontainer min-h-[100vh] flex customMax:flex-col justify-center items-center customMax:gap-0  customlg:gap-10 ">
       <div className="imgsection customMax:text-center">
         {/* Heading Part */}
         <div className="heading2 hidden customMax:block text-center mt-10 ">
