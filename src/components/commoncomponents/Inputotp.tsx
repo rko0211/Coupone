@@ -9,45 +9,39 @@ import {
 
 interface PhoneNumberInputProps {
   register: UseFormRegister<any>;
-
   name: string;
 }
 
 const Inputotp: React.FC<PhoneNumberInputProps> = ({ register, name }) => {
+  const {
+    onChange,
+    onBlur,
+    ref,
+    name: inputName,
+  } = register(name, { required: true });
+
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="flex items-center justify-center gap-2 rounded-lg mb-5 ">
+      <div className="flex items-center justify-center gap-2 rounded-lg mb-5">
         <InputOTP
           maxLength={6}
           pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
           required
-          {...register(`${name}`, { required: true })}
+          onChange={(newValue: string) =>
+            onChange({ target: { value: newValue } })
+          }
+          onBlur={(event) => onBlur(event)}
+          ref={ref}
+          name={inputName}
         >
           <InputOTPGroup className="flex gap-3">
-            <InputOTPSlot
-              index={0}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
-            <InputOTPSlot
-              index={1}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
-            <InputOTPSlot
-              index={2}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
-            <InputOTPSlot
-              index={3}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
-            <InputOTPSlot
-              index={4}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
-            <InputOTPSlot
-              index={5}
-              className="bg-customFieldColor p-6 rounded-lg"
-            />
+            {Array.from({ length: 6 }).map((_, index) => (
+              <InputOTPSlot
+                key={index}
+                index={index}
+                className="bg-customFieldColor p-6 rounded-lg"
+              />
+            ))}
           </InputOTPGroup>
         </InputOTP>
       </div>
