@@ -12,6 +12,18 @@ import PhoneOtpVerification from "./components/otpverification/PhoneOtpVerificat
 const App: React.FC = () => {
   return (
     <>
+      {/* <LoginPage />
+      <ForgetPasswordPage />
+      <RegisterPage />
+      <EmailOtpVerification />
+
+      <PhoneOtpVerification />
+
+      <VerifyAccount />
+
+      <CreateNewPassword />
+      <Checkemail /> */}
+
       <Routes>
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
