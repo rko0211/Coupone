@@ -1,5 +1,4 @@
 import React from "react";
-import { FaCheckSquare } from "react-icons/fa";
 import { UseFormRegister } from "react-hook-form";
 interface EmailInputProps {
   register: UseFormRegister<any>;
