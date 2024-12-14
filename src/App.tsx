@@ -16,6 +16,7 @@ const App: React.FC = () => {
       <CreateNewPassword />
       <Checkemail />
       <VerifyAccount />
+
       <Routes>
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
