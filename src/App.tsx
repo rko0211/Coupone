@@ -9,21 +9,11 @@ import { Route, Routes } from "react-router-dom";
 import VerifyAccount from "./components/verifyaccount/VerifyAccount";
 import EmailOtpVerification from "./components/otpverification/EmailOtpVerification";
 import PhoneOtpVerification from "./components/otpverification/PhoneOtpVerification";
+import Navbar from "./components/navbar/Navbar";
 const App: React.FC = () => {
   return (
     <>
-      {/* <LoginPage />
-      <ForgetPasswordPage />
-      <RegisterPage />
-      <EmailOtpVerification />
-
-      <PhoneOtpVerification />
-
-      <VerifyAccount />
-
-      <CreateNewPassword />
-      <Checkemail /> */}
-
+      <Navbar />
       <Routes>
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
