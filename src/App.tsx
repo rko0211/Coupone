@@ -10,11 +10,14 @@ import VerifyAccount from "./components/verifyaccount/VerifyAccount";
 import EmailOtpVerification from "./components/otpverification/EmailOtpVerification";
 import PhoneOtpVerification from "./components/otpverification/PhoneOtpVerification";
 import Navbar from "./components/navbar/Navbar";
+import HomeForm from "./components/form/HomeForm";
 const App: React.FC = () => {
   return (
     <>
       <Navbar />
+
       <Routes>
+        <Route path="/" element={<HomeForm />} />
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
         <Route path="/Sign-up" element={<RegisterPage />} />
