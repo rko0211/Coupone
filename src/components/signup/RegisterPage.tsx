@@ -6,24 +6,29 @@ import PasswordField from "../commoncomponents/PasswordField";
 import PhoneNumberField from "../commoncomponents/PhoneNumberField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type Inputs = {
   userphone: number;
   useremail: string;
-  userpassword: string;
+  password: string;
+  confirmPassword: string;
 };
 
 const RegisterPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    // watch,
-    formState: { isSubmitting },
-  } = useForm<Inputs>();
-
+    watch,
+    formState: { isSubmitting, errors },
+  } = useForm<Inputs>({
+    mode: "onBlur",
+  });
+  const password = watch("password");
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    navigate("/changeverificationmode");
   };
 
   return (
@@ -100,6 +105,7 @@ const RegisterPage: React.FC = () => {
                 register={register}
                 id="userRegisterpassword"
                 name="password"
+                error={errors.password}
               />
 
               <label
@@ -112,7 +118,20 @@ const RegisterPage: React.FC = () => {
                 register={register}
                 id="confirmpassword"
                 name="confirmPassword"
+                error={errors.confirmPassword}
+                validate={{
+                  // Custom validation to check if passwords match
+                  validate: (value) =>
+                    value === password || "Passwords do not match",
+                }}
               />
+
+              {/* Display error if passwords don't match */}
+              {errors.confirmPassword && (
+                <span className="text-red-500 ml-5">
+                  {errors.confirmPassword.message}
+                </span>
+              )}
 
               <button
                 type="submit"

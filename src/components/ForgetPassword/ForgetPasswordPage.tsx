@@ -4,6 +4,7 @@ import forgetpasswordImage from "../../assets/bro.png";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import EmailField from "../commoncomponents/EmailField";
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   useremail: string;
@@ -16,11 +17,16 @@ const ForgetPasswordPage: React.FC = () => {
     // watch,
     formState: { isSubmitting },
   } = useForm<Inputs>();
-
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    if (data.useremail === "abc@gmail.com") {
+      navigate("/");
+    } else {
+      navigate("/checkemail");
+    }
   };
-
+  // LOGIN PAGE , wrong check page
   return (
     <div className=" logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0  customlg:gap-10">
       <div className="loginform customMax:w-full customMax:p-5  lg:mt-10">

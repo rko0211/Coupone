@@ -1,24 +1,18 @@
 import React from "react";
 import checkemail from "../../assets/checkemail.png";
+import { NavLink, useNavigate } from "react-router-dom";
 
-// import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-// type Inputs = {
-//   useremail: string;
-// };
+type Inputs = {};
 
 const Checkemail: React.FC = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   // watch,
-  //   formState: { isSubmitting },
-  // } = useForm<Inputs>();
-
-  // const onSubmit: SubmitHandler<Inputs> = (data) => {
-  //   console.log(data);
-  // };
-
+  const { handleSubmit } = useForm<Inputs>();
+  const navigate = useNavigate();
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    console.log("Form submitted successfully!");
+    navigate("/createnewpassword");
+  };
   return (
     <div className="logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0  customlg:gap-10 ">
       <div className="loginform customMax:w-full customMax:p-5 lg:mt-10">
@@ -35,7 +29,7 @@ const Checkemail: React.FC = () => {
 
         {/* Form Part */}
         <div className="formdiv flex flex-col items-center">
-          <form className="w-full">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="formoptions w-full">
               <button
                 type="submit"
@@ -49,21 +43,21 @@ const Checkemail: React.FC = () => {
 
           <p className="mt-5 text-customgraydark font-semibold">
             Didn’t receive the email?
-            <a
-              href="/resend-email"
+            <NavLink
+              to="/forget-password"
               className="text-customGreenColor font-semibold ml-4"
             >
               Resend Email
-            </a>
+            </NavLink>
           </p>
           <p className="text-customgraydark font-semibold">
             Enter wrong email address?
-            <a
-              href="/forget-password"
+            <NavLink
+              to="/forget-password"
               className="text-customGreenColor font-semibold ml-4"
             >
               Forget Password
-            </a>
+            </NavLink>
           </p>
         </div>
       </div>

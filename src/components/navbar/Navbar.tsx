@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
           <NavLink
-            to="/Sign-in"
+            to="/"
             className={({ isActive }) =>
               isActive
                 ? "text-gray-200 font-semibold underline"
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-blue-700 space-y-2 px-4 py-4">
           <NavLink
-            to="/Sign-in"
+            to="/"
             className="block hover:text-gray-300"
             onClick={() => setIsOpen(false)}
           >

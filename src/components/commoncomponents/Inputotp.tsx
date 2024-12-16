@@ -6,6 +6,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { NavLink } from "react-router-dom";
 
 interface PhoneNumberInputProps {
   register: UseFormRegister<any>;
@@ -49,9 +50,12 @@ const Inputotp: React.FC<PhoneNumberInputProps> = ({ register, name }) => {
         <span className="text-customgraydark font-semibold lg:ml-16">
           Didn’t receive the OTP?
         </span>
-        <a href="/resend" className="text-customGreenColor font-semibold">
+        <NavLink
+          to="/changeverificationmode"
+          className="text-customGreenColor font-semibold"
+        >
           Resend OTP
-        </a>
+        </NavLink>
       </p>
     </div>
   );

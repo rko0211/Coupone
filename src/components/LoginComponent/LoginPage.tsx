@@ -5,7 +5,7 @@ import EmailField from "../commoncomponents/EmailField";
 import PasswordField from "../commoncomponents/PasswordField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type Inputs = {
   useremail: string;
@@ -19,9 +19,10 @@ const LoginPage: React.FC = () => {
     // watch,
     formState: { isSubmitting },
   } = useForm<Inputs>();
-
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    navigate("/HomePage");
   };
 
   return (

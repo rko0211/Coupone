@@ -1,33 +1,38 @@
 import React from "react";
 import createPassword from "../../assets/createPassword.png";
-
 import PasswordField from "../commoncomponents/PasswordField";
-
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   userphone: number;
   useremail: string;
   userpassword: string;
+  confirmPassword: string;
 };
 
 const CreateNewPassword: React.FC = () => {
   const {
     register,
     handleSubmit,
-    // watch,
-    formState: { isSubmitting },
-  } = useForm<Inputs>();
+    formState: { isSubmitting, errors },
+    watch,
+  } = useForm<Inputs>({
+    mode: "onBlur", // Trigger validation on blur
+  });
 
+  const userpassword = watch("userpassword"); 
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    navigate("/");
   };
 
   return (
-    <div className="logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0  customlg:gap-10 ">
-      <div className="loginform customMax:w-full customMax:p-5  lg:mt-10">
+    <div className="logincontainer min-h-[100vh] flex customMax:flex-col-reverse justify-center items-center customMax:gap-0 customlg:gap-10 ">
+      <div className="loginform customMax:w-full customMax:p-5 lg:mt-10">
         {/* Heading Part */}
-        <div className="heading1 block customMax:hidden  text-center">
+        <div className="heading1 block customMax:hidden text-center">
           <h2 className="welcomeheading font-bold text-2xl md:text-3xl lg:mb-10">
             Create a New Password
           </h2>
@@ -35,7 +40,7 @@ const CreateNewPassword: React.FC = () => {
 
         {/* Form Part */}
         <div className="formdiv flex flex-col items-center">
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full ">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             <div className="formoptions w-full">
               <label
                 htmlFor="newUserPassword"
@@ -46,7 +51,8 @@ const CreateNewPassword: React.FC = () => {
               <PasswordField
                 register={register}
                 id="newUserPassword"
-                name="oldPassword"
+                name="userpassword"
+                error={errors.userpassword}
               />
 
               <label
@@ -59,7 +65,20 @@ const CreateNewPassword: React.FC = () => {
                 register={register}
                 id="newConfirmPassword"
                 name="confirmPassword"
+                error={errors.confirmPassword}
+                validate={{
+                  // Custom validation to check if passwords match
+                  validate: (value) =>
+                    value === userpassword || "Passwords do not match",
+                }}
               />
+
+              {/* Display error if passwords don't match */}
+              {errors.confirmPassword && (
+                <span className="text-red-500 ml-5">
+                  {errors.confirmPassword.message}
+                </span>
+              )}
 
               <button
                 type="submit"
@@ -74,14 +93,14 @@ const CreateNewPassword: React.FC = () => {
       </div>
       <div className="imgsection customMax:text-center">
         {/* Heading Part */}
-        <div className="heading2 hidden customMax:block text-center mt-10 ">
+        <div className="heading2 hidden customMax:block text-center mt-10">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl mb-4">
             Create a New Password
           </h2>
         </div>
 
         {/* Image part */}
-        <div className="loginimage  customMax:inline-block">
+        <div className="loginimage customMax:inline-block">
           <img
             src={createPassword}
             alt="SignUp Image"

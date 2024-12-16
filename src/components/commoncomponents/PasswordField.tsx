@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { HiMiniEye } from "react-icons/hi2";
 import { HiEyeSlash } from "react-icons/hi2";
-import { UseFormRegister } from "react-hook-form";
+import { UseFormRegister, FieldError } from "react-hook-form";
 
 interface PasswordInputProps {
   register: UseFormRegister<any>;
   id: string;
   name: string;
+  error?: FieldError;
+  validate?: any;
 }
 
 const PasswordField: React.FC<PasswordInputProps> = ({
   register,
   id,
   name,
+  validate,
 }) => {
   const [passwordType, setPasswordType] = useState<boolean>(false);
   const togglePasswordVisibility = () => {
@@ -31,9 +34,7 @@ const PasswordField: React.FC<PasswordInputProps> = ({
         type={passwordType ? "text" : "password"}
         id={id}
         className="outline-none hover:outline-none border-none p-3 bg-customFieldColor text-sm lg:text-lg w-full customMax:p-2"
-        {...register(`${name}`, {
-          required: true,
-        })}
+        {...register(`${name}`, { required: "Password is required", validate })}
         required
       />
       {/* Icon */}

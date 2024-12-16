@@ -27,7 +27,7 @@ const AddressForm: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-6xl mx-auto p-6 bg-[#F0F0F0] rounded-lg shadow-lg">
+      <div className=" w-full lg:max-w-6xl mx-auto p-6 bg-[#F0F0F0] rounded-lg shadow-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
             {/* First Name */}

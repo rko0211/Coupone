@@ -3,7 +3,7 @@ import React from "react";
 import otpverification from "../../assets/otpverification.png";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Inputotp from "../commoncomponents/Inputotp";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type Inputs = {
   useremail: boolean;
@@ -17,9 +17,10 @@ const PhoneOtpVerification: React.FC = () => {
     // watch,
     formState: { isSubmitting },
   } = useForm<Inputs>();
-
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    navigate("/form");
   };
 
   return (
