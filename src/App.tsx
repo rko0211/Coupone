@@ -11,13 +11,14 @@ import EmailOtpVerification from "./components/otpverification/EmailOtpVerificat
 import PhoneOtpVerification from "./components/otpverification/PhoneOtpVerification";
 import Navbar from "./components/navbar/Navbar";
 import HomeForm from "./components/form/HomeForm";
+import HomePage from "./components/home/HomePage";
 const App: React.FC = () => {
   return (
     <>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomeForm />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/Sign-in" element={<LoginPage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
         <Route path="/Sign-up" element={<RegisterPage />} />
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/changeverificationmode" element={<VerifyAccount />} />
         <Route path="/createnewpassword" element={<CreateNewPassword />} />
         <Route path="/checkemail" element={<Checkemail />} />
+        <Route path="/form" element={<HomeForm />} />
       </Routes>
     </>
   );

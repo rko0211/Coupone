@@ -100,6 +100,17 @@ const Navbar: React.FC = () => {
           >
             Check Email
           </NavLink>
+
+          <NavLink
+            to="/form"
+            className={({ isActive }) =>
+              isActive
+                ? "text-gray-200 font-semibold underline"
+                : "hover:text-gray-300"
+            }
+          >
+            Form
+          </NavLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -171,6 +182,13 @@ const Navbar: React.FC = () => {
             onClick={() => setIsOpen(false)}
           >
             Check Email
+          </NavLink>
+          <NavLink
+            to="/form"
+            className="block hover:text-gray-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Form
           </NavLink>
         </div>
       )}
