@@ -21,7 +21,7 @@ const CreateNewPassword: React.FC = () => {
     mode: "onBlur", // Trigger validation on blur
   });
 
-  const userpassword = watch("userpassword"); 
+  const userpassword = watch("userpassword");
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
@@ -53,6 +53,7 @@ const CreateNewPassword: React.FC = () => {
                 id="newUserPassword"
                 name="userpassword"
                 error={errors.userpassword}
+                value={undefined}
               />
 
               <label
@@ -68,9 +69,10 @@ const CreateNewPassword: React.FC = () => {
                 error={errors.confirmPassword}
                 validate={{
                   // Custom validation to check if passwords match
-                  validate: (value) =>
+                  validate: (value: string) =>
                     value === userpassword || "Passwords do not match",
                 }}
+                value={undefined}
               />
 
               {/* Display error if passwords don't match */}

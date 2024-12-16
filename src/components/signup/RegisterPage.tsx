@@ -106,6 +106,7 @@ const RegisterPage: React.FC = () => {
                 id="userRegisterpassword"
                 name="password"
                 error={errors.password}
+                value={undefined}
               />
 
               <label
@@ -121,9 +122,10 @@ const RegisterPage: React.FC = () => {
                 error={errors.confirmPassword}
                 validate={{
                   // Custom validation to check if passwords match
-                  validate: (value) =>
+                  validate: (value: string) =>
                     value === password || "Passwords do not match",
                 }}
+                value={undefined}
               />
 
               {/* Display error if passwords don't match */}

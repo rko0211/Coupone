@@ -10,6 +10,7 @@ interface PasswordInputProps {
   name: string;
   error?: FieldError;
   validate?: any;
+  value: any;
 }
 
 const PasswordField: React.FC<PasswordInputProps> = ({
