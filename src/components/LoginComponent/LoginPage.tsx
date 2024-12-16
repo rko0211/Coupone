@@ -65,6 +65,7 @@ const LoginPage: React.FC = () => {
                 register={register}
                 id="userpassword"
                 name="userpassword"
+                value={undefined}
               />
 
               <div className=" forgotpassword flex justify-between items-center lg:mb-9 customMax:mb-5">
