@@ -2,7 +2,7 @@ import React from "react";
 
 import otpverification from "../../assets/otpverification.png";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Inputotp from "../commoncomponents/Inputotp";
+import Inputotp from "../../components/shared/Inputotp";
 import { NavLink, useNavigate } from "react-router-dom";
 
 type Inputs = {

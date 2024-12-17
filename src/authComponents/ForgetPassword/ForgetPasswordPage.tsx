@@ -3,7 +3,7 @@ import forgetpasswordImage from "../../assets/bro.png";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import EmailField from "../commoncomponents/EmailField";
+import EmailField from "../../components/shared/EmailField";
 import { useNavigate } from "react-router-dom";
 
 type Inputs = {

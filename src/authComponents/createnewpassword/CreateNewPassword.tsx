@@ -1,6 +1,6 @@
 import React from "react";
 import createPassword from "../../assets/createPassword.png";
-import PasswordField from "../commoncomponents/PasswordField";
+import PasswordField from "../../components/shared/PasswordField";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import loginFrame from "../../assets/loginFrame.png";
 
-import EmailField from "../commoncomponents/EmailField";
-import PasswordField from "../commoncomponents/PasswordField";
+import EmailField from "../../components/shared/EmailField";
+import PasswordField from "../../components/shared/PasswordField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";

@@ -1,9 +1,9 @@
 import React from "react";
 import signupFrame from "../../assets/signup.png";
 
-import EmailField from "../commoncomponents/EmailField";
-import PasswordField from "../commoncomponents/PasswordField";
-import PhoneNumberField from "../commoncomponents/PhoneNumberField";
+import EmailField from "../../components/shared/EmailField";
+import PasswordField from "../../components/shared/PasswordField";
+import PhoneNumberField from "../../components/shared/PhoneNumberField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
