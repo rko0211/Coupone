@@ -1,5 +1,5 @@
 import React from "react";
-import checkemail from "../../assets/checkemail.png";
+import checkemail from "../../../assets/checkemail.png";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { useForm, SubmitHandler } from "react-hook-form";

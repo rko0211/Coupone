@@ -1,15 +1,17 @@
 import React from "react";
 
-import otpverification from "../../assets/otpverification.png";
+import verify_account from "../../../assets/verify_account.png";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Inputotp from "../../components/shared/Inputotp";
-import { NavLink, useNavigate } from "react-router-dom";
-
+import VerifyField from "../../shared/VerifyField";
+import { useNavigate } from "react-router-dom";
 type Inputs = {
-  emailotpfield: string; // Updated type to reflect array structure
+  useremail: boolean;
+  userphone: boolean;
+  emailcheck: boolean;
+  phonecheck: boolean;
 };
 
-const EmailOtpVerification: React.FC = () => {
+const VerifyAccount: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -18,8 +20,13 @@ const EmailOtpVerification: React.FC = () => {
   } = useForm<Inputs>();
   const navigate = useNavigate();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("Form Data:", data);
-    navigate("/form");
+    if (data.emailcheck) {
+      navigate("/emailverification");
+    } else if (data.phonecheck) {
+      navigate("/phoneverification");
+    }
+
+    console.log(data);
   };
 
   return (
@@ -28,39 +35,40 @@ const EmailOtpVerification: React.FC = () => {
         {/* Heading Part */}
         <div className="heading1 block customMax:hidden  text-center">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl lg:mb-4">
-            OTP Verification
+            Verify Your Account
           </h2>
           <p className="welcomeparagraph mb-6 max-w-[524.067px] text-customGray">
-            Enter the One-Time Password (OTP) sent to your registered email
-            address Example@gmail.com.
+            To continue, please provide your email address where we can send the
+            One-Time Password (OTP).
           </p>
         </div>
 
         {/* Form Part */}
         <div className="formdiv flex flex-col items-center">
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+          <form className="w-full">
             <div className="formoptions w-full">
-              <Inputotp register={register} name="emailotpfield" />
+              <VerifyField
+                register={register}
+                id="checkemail"
+                name="emailcheck"
+                content="Continue With Email"
+              />
+
+              <VerifyField
+                register={register}
+                id="checkphone"
+                name="phonecheck"
+                content="Continue With Phone Number"
+              />
 
               <button
+                onClick={handleSubmit(onSubmit)}
                 type="submit"
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold"
                 disabled={isSubmitting}
               >
-                Verify OTP
+                Send OTP
               </button>
-
-              <p className="w-full flex items-center flex-wrap gap-4 justify-center mt-5">
-                <span className="text-customgraydark font-semibold">
-                  Prefer to verify with your phone number?
-                </span>
-                <NavLink
-                  to="/changeverificationmode"
-                  className="text-customGreenColor font-semibold"
-                >
-                  Verify with Phone Number
-                </NavLink>
-              </p>
             </div>
           </form>
         </div>
@@ -70,18 +78,18 @@ const EmailOtpVerification: React.FC = () => {
         {/* Heading Part */}
         <div className="heading2 hidden customMax:block text-center mt-10 ">
           <h2 className="welcomeheading font-bold text-3xl md:text-4xl mb-1">
-            OTP Verification
+            Verify Your Account
           </h2>
           <p className="welcomeparagraph mb-2 p-5 text-customGray">
-            Enter the One-Time Password (OTP) sent to your registered email
-            address Example@gmail.com.
+            To continue, please provide your email address where we can send the
+            One-Time Password (OTP).
           </p>
         </div>
 
         {/* Image part */}
         <div className="loginimage  customMax:inline-block">
           <img
-            src={otpverification}
+            src={verify_account}
             alt="Login Image"
             className="loginpic h-auto customMax:w-[240px] customMax:h-[240px]"
           />
@@ -91,4 +99,4 @@ const EmailOtpVerification: React.FC = () => {
   );
 };
 
-export default EmailOtpVerification;
+export default VerifyAccount;

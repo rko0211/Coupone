@@ -1,16 +1,16 @@
-import ForgetPasswordPage from "./authComponents/ForgetPassword/ForgetPasswordPage";
-import LoginPage from "./pages/LoginComponent/LoginPage";
-import Checkemail from "./authComponents/checkemail/Checkemail";
+import ForgetPasswordPage from "./components/authComponents/ForgetPassword/ForgetPasswordPage";
+import LoginPage from "./pages/LoginPage";
+import Checkemail from "./components/authComponents/checkemail/Checkemail";
 
-import CreateNewPassword from "./authComponents/createnewpassword/CreateNewPassword";
+import CreateNewPassword from "./components/authComponents/createnewpassword/CreateNewPassword";
 
-import RegisterPage from "./pages/signup/RegisterPage";
+import RegisterPage from "./pages/RegisterPage";
 import { Route, Routes } from "react-router-dom";
-import VerifyAccount from "./authComponents/verifyaccount/VerifyAccount";
-import EmailOtpVerification from "./authComponents/otpverification/EmailOtpVerification";
-import PhoneOtpVerification from "./authComponents/otpverification/PhoneOtpVerification";
-import HomeForm from "./pages/form/HomeForm";
-import HomePage from "./pages/home/HomePage";
+import VerifyAccount from "./components/authComponents/verifyaccount/VerifyAccount";
+import EmailOtpVerification from "./components/authComponents/otpverification/EmailOtpVerification";
+import PhoneOtpVerification from "./components/authComponents/otpverification/PhoneOtpVerification";
+import HomeForm from "./pages/HomeForm";
+import HomePage from "./pages/HomePage";
 const App: React.FC = () => {
   return (
     <>
