@@ -148,7 +148,7 @@ const RegisterPage: React.FC = () => {
           <p className="mt-5">
             Already Have and Account?
             <NavLink
-              to="/Sign-in"
+              to="/"
               className="text-customGreenColor font-semibold ml-4"
             >
               Sign in
