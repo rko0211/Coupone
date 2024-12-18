@@ -1,9 +1,12 @@
 import tailwindcssAnimate from "tailwindcss-animate";
+
 export default {
 	darkMode: ["class"],
 	content: [
+
 		"./index.html",
-		"./src/**/*.{js,jsx,ts,tsx}"
+		"./src/**/*.{js,jsx,ts,tsx}",
+	
 	],
 	theme: {
 		extend: {
@@ -13,6 +16,7 @@ export default {
 				customLabelColor: '#404040',
 				customGreenColor: '#248D50',
 				customgraydark: ' #888888',
+				navbarBgColor: '#FAFAFA',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -58,12 +62,22 @@ export default {
 				customMax: {
 					max: '1124px'
 				},
+				navBarWidth: {
+					max: '1112px'
+				},
 				customlg: '1125px'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'custom': '0px 0px 4px 0px #00000040',
+
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
 			}
 		}
 	},

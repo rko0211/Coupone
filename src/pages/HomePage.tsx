@@ -1,9 +1,14 @@
+import Carousel from "@/components/shared/Carousel";
+import HorizontalRuler from "@/components/shared/HorizontalRuler";
+import OfferSection from "@/components/shared/OfferSection";
 import React from "react";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="font-semibold text-5xl text-center">Home</p>
+    <div className="">
+      <Carousel />
+      <OfferSection />
+      <HorizontalRuler />
     </div>
   );
 };

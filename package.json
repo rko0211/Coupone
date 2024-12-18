@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-menubar": "^1.1.4",
+    "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.1",
+    "flowbite-react": "^0.10.2",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
@@ -19,6 +23,7 @@
     "react-hook-form": "^7.54.0",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.0.2",
+    "swiper": "^11.1.15",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
