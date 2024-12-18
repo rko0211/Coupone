@@ -13,13 +13,11 @@ import HomeForm from "./pages/HomeForm";
 import HomePage from "./pages/HomePage";
 // import Carousel from "./components/shared/Carousel";
 // import HorizontalRuler from "./components/shared/HorizontalRuler";
-import Navbar from "./components/shared/Navbar";
+// import Navbar from "./components/shared/Navbar";
 // import OfferSection from "./components/shared/OfferSection";
 const App: React.FC = () => {
   return (
     <>
-      <Navbar />
-
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/HomePage" element={<HomePage />} />
