@@ -1,3 +1,4 @@
+import BrandSection from "@/components/shared/BrandSection";
 import Carousel from "@/components/shared/Carousel";
 import HorizontalRuler from "@/components/shared/HorizontalRuler";
 import Navbar from "@/components/shared/Navbar";
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
       <Carousel />
       <OfferSection />
       <HorizontalRuler />
+      <BrandSection />
     </div>
   );
 };

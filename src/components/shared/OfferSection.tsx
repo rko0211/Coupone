@@ -1,13 +1,6 @@
 import React from "react";
-import carousel1 from "../../assets/carousel1.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation"; // Import navigation styles
 
 // Import required modules
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
@@ -39,9 +32,6 @@ const OfferSection: React.FC = () => {
           },
         }}
         freeMode={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
         navigation={true} // Enable navigation
         modules={[FreeMode, Pagination, Navigation]} // Add Navigation module
         className="mySwiper"

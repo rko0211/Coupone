@@ -32,9 +32,7 @@ const Carousel: React.FC = () => {
           },
         }}
         freeMode={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
+    
         navigation={true} // Enable navigation
         modules={[FreeMode, Pagination, Navigation]} // Add Navigation module
         className="mySwiper"

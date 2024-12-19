@@ -6,7 +6,7 @@ export default {
 
 		"./index.html",
 		"./src/**/*.{js,jsx,ts,tsx}",
-	
+
 	],
 	theme: {
 		extend: {
@@ -65,6 +65,10 @@ export default {
 				navBarWidth: {
 					max: '1112px'
 				},
+				brandWidth: {
+					max:'1234px'
+				},
+				searchBar: "771px",
 				customlg: '1125px'
 			},
 			borderRadius: {
