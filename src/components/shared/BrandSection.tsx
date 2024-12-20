@@ -11,6 +11,7 @@ import brand3 from "../../assets/brand3.png";
 import brand4 from "../../assets/brand4.png";
 import brand5 from "../../assets/brand5.png";
 import brand6 from "../../assets/brand6.png";
+import SectionHeading from "./SectionHeading";
 
 const BrandSection: React.FC = () => {
   const smallCards = [
@@ -23,11 +24,7 @@ const BrandSection: React.FC = () => {
   ];
   return (
     <div className="mt-10 w-[90%] mx-auto">
-      <div className="font-['Poppins'] text-lg font-bold leading-[40px] text-left decoration-[underline-from-font] decoration-skip-ink-none text-[#404040] w-max block mb-8">
-        Popular Brands
-        <br />
-        <span className="w-full block h-1 bg-[#248D50]"></span>
-      </div>
+      <SectionHeading heading="Popular Brand" />
 
       <div className="bg-[#DAFFE9] p-6 rounded-[8px] flex flex-wrap gap-6">
         {/* Large Card */}
