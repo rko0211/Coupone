@@ -44,7 +44,7 @@ function Faq() {
               className="border border-gray-400"
             >
               <AccordionTrigger className="flex justify-between items-center p-8">
-                <div className="font-[Poppins] text-lg leading-[36px] text-left">
+                <div className="font-[Poppins] text-[24px] leading-[36px] text-left font-semibold ">
                   {item.question}
                 </div>
               </AccordionTrigger>

@@ -21,6 +21,8 @@ const BrandSection: React.FC = () => {
     { id: 4, name: "Amazon", discount: "12%", img: brand4 },
     { id: 5, name: "Udemy", discount: "30%", img: brand5 },
     { id: 6, name: "Spotify", discount: "8%", img: brand6 },
+    { id: 7, name: "Spotify", discount: "8%", img: brand6 },
+    { id: 8, name: "Spotify", discount: "8%", img: brand6 },
   ];
   return (
     <div className="mt-10 w-[90%] mx-auto">
@@ -43,7 +45,7 @@ const BrandSection: React.FC = () => {
         </div>
 
         {/* Grid of Small Cards */}
-        <div className=" brandWidth:hidden grid grid-cols-4 gap-4">
+        <div className=" brandWidth:hidden grid grid-cols-7 gap-4">
           {smallCards.map((card) => (
             <div
               key={card.id}

@@ -1,7 +1,13 @@
 import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Autoplay,
+} from "swiper/modules";
 
 import SectionHeading from "./SectionHeading";
 import MONDOfarm from "../../assets/smallimage.png";
@@ -68,9 +74,13 @@ const CashBackOffer: React.FC = () => {
           slidesPerView={"auto"}
           navigation={false}
           pagination={false}
-          mousewheel={true}
+          mousewheel={false}
           keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+          autoplay={{
+            delay: 2000, //2sec delay
+            disableOnInteraction: false, // Keeps autoplay running even after user interaction
+          }}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
           className="mySwiper "
         >
           {cards.map((card) => (

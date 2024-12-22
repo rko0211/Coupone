@@ -54,7 +54,7 @@ const ReviewSection: React.FC = () => {
           slidesPerView={"auto"}
           navigation={false}
           pagination={false}
-          mousewheel={true}
+          mousewheel={false}
           keyboard={true}
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           className="mySwiper "
