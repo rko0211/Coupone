@@ -1,6 +1,6 @@
 import React from "react";
 import cardimage from "../../assets/cardimage.png";
-const Card: React.FC = () => {
+const CardComponent: React.FC = () => {
   return (
     <div className="p-2">
       <div className="card w-[360px] bg-[#F0F0F0] shadow-custom p-4 rounded-sm ">
@@ -28,4 +28,4 @@ const Card: React.FC = () => {
   );
 };
 
-export default Card;
+export default CardComponent;

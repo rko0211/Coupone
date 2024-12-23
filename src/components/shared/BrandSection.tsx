@@ -1,8 +1,13 @@
 import React from "react";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 import mondofarm from "../../assets/MONDOfarm.png";
 import brand1 from "../../assets/brand1.png";
@@ -63,34 +68,45 @@ const BrandSection: React.FC = () => {
           ))}
         </div>
 
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={"auto"}
-          navigation={false}
-          pagination={false}
-          mousewheel={true}
-          keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          className="mySwiper !hidden brandWidth:!block"
+        <Carousel
+          opts={{
+            align: "center",
+          }}
+          className="w-full md:hidden block"
         >
-          {smallCards.map((card) => (
-            <SwiperSlide className="!w-max" key={card.id}>
-              <div
-                key={card.id}
-                className="w-[160px] h-[160px] rounded-[4px] p-4 bg-white shadow-custom flex flex-col justify-between"
+          <CarouselContent>
+            {smallCards.map((item, index) => (
+              <CarouselItem
+                key={index}
+                className="w-full md:basis-1/2 lg:basis-1/4"
               >
-                <div>
-                  <img src={card.img} alt={card.name} className="mx-auto" />
+                <div className="p-1 w-max">
+                  <Card className="w-max">
+                    <CardContent
+                      key={item.id}
+                      className="w-[160px] h-[160px] rounded-[4px] p-4 bg-white shadow-custom flex flex-col justify-between"
+                    >
+                      <div>
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className="mx-auto"
+                        />
+                      </div>
+                      <div className=" font-['Poppins'] text-center text-[18px] leading-[27px] font-semibold ">
+                        <div className="font-['Poppins'] text-[16px] text-gray-600">
+                          Logo Upto {item.discount}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-                <div className=" font-['Poppins'] text-center text-[18px] leading-[27px] font-semibold ">
-                  <div className="font-['Poppins'] text-[16px] text-gray-600">
-                    Logo Upto {card.discount}
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </div>
   );

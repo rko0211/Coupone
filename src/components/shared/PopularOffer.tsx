@@ -4,6 +4,11 @@ import MONDOframe from "../../assets/MONDOfarm.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 const PopularOffer: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 

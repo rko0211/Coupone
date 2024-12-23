@@ -1,14 +1,14 @@
-// import BrandSection from "@/components/shared/BrandSection";
-// import Carousel from "@/components/shared/Carousel";
-// import CashBackOffer from "@/components/shared/CashBackOffer";
-// import Faq from "@/components/shared/Faq";
-// import Footer from "@/components/shared/Footer";
-// import HorizontalRuler from "@/components/shared/HorizontalRuler";
+import BrandSection from "@/components/shared/BrandSection";
+import CarouselComponent from "@/components/shared/CarouselComponent";
+import CashBackOffer from "@/components/shared/CashBackOffer";
+import Faq from "@/components/shared/Faq";
+import Footer from "@/components/shared/Footer";
+import HorizontalRuler from "@/components/shared/HorizontalRuler";
 import Navbar from "@/components/shared/Navbar";
-// import OfferSection from "@/components/shared/OfferSection";
-// import PopularOffer from "@/components/shared/PopularOffer";
-// import ReviewSection from "@/components/shared/ReviewSection";
-// import TrabdingProduct from "@/components/shared/TrabdingProduct";
+import OfferSection from "@/components/shared/OfferSection";
+import PopularOffer from "@/components/shared/PopularOffer";
+import ReviewSection from "@/components/shared/ReviewSection";
+import TrabdingProduct from "@/components/shared/TrabdingProduct";
 import React from "react";
 import ListPage from "./ListPage";
 
@@ -16,7 +16,8 @@ const HomePage: React.FC = () => {
   return (
     <div className="">
       <Navbar />
-      {/* <Carousel />
+      <CarouselComponent />
+
       <OfferSection />
       <HorizontalRuler />
       <BrandSection />
@@ -25,8 +26,7 @@ const HomePage: React.FC = () => {
       <ReviewSection />
       <CashBackOffer />
       <Faq />
-      <Footer /> */}
-
+      <Footer />
       <ListPage />
     </div>
   );
