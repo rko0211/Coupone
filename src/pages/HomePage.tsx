@@ -1,16 +1,16 @@
-import BrandSection from "@/components/shared/BrandSection";
-import CarouselComponent from "@/components/shared/CarouselComponent";
-import CashBackOffer from "@/components/shared/CashBackOffer";
-import Faq from "@/components/shared/Faq";
+import BrandSection from "@/components/HomePageComponent/BrandSection";
+import CarouselComponent from "@/components/HomePageComponent/CarouselComponent";
+// import CashBackOffer from "@/components/HomePageComponent/CashBackOffer";
+import Faq from "@/components/HomePageComponent/Faq";
 import Footer from "@/components/shared/Footer";
-import HorizontalRuler from "@/components/shared/HorizontalRuler";
+import HorizontalRuler from "@/components/HomePageComponent/HorizontalRuler";
 import Navbar from "@/components/shared/Navbar";
-import OfferSection from "@/components/shared/OfferSection";
-import PopularOffer from "@/components/shared/PopularOffer";
-import ReviewSection from "@/components/shared/ReviewSection";
-import TrabdingProduct from "@/components/shared/TrabdingProduct";
+import OfferSection from "@/components/HomePageComponent/OfferSection";
+import PopularOffer from "@/components/HomePageComponent/PopularOffer";
+// import ReviewSection from "@/components/HomePageComponent/ReviewSection";
+import TrabdingProduct from "@/components/HomePageComponent/TrabdingProduct";
 import React from "react";
-import ListPage from "./ListPage";
+// import ListPage from "./ListPage";
 
 const HomePage: React.FC = () => {
   return (
@@ -23,11 +23,11 @@ const HomePage: React.FC = () => {
       <BrandSection />
       <TrabdingProduct />
       <PopularOffer />
-      <ReviewSection />
-      <CashBackOffer />
+      {/* <ReviewSection /> */}
+      {/* <CashBackOffer /> */}
       <Faq />
+
       <Footer />
-      <ListPage />
     </div>
   );
 };

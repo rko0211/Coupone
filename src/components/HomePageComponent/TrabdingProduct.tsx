@@ -6,7 +6,7 @@ import travelicon from "../../assets/travelicon.png";
 import electronicsicon from "../../assets/electronicsicon.png";
 import electronicsicon2 from "../../assets/electronicsicon2.png";
 import MONDOframe from "../../assets/MONDOfarm.png";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../shared/SectionHeading";
 
 interface Tab {
   id: number;

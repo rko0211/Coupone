@@ -3,6 +3,7 @@ import amazon from "../../assets/amazon.png";
 import zikomarke from "../../assets/zikomarke.png";
 import spotify from "../../assets/spotify.png";
 import Pagination from "./Pagination";
+import { useNavigate } from "react-router-dom";
 
 // Define the type for card items
 interface CardData {
@@ -77,6 +78,10 @@ const BestDealsCard: React.FC<CardData> = ({
   discount,
   btnTitle,
 }) => {
+  const navigate = useNavigate();
+  const goToPage = () => {
+    navigate("/amazon");
+  };
   return (
     <div className="flex flex-col items-center bg-white shadow-custom rounded-[20px] gap-5 w-full max-w-[349px] p-5">
       <div>
@@ -89,7 +94,11 @@ const BestDealsCard: React.FC<CardData> = ({
       <div className="font-poppins font-semibold leading-[54px] text-[18px] md:text-[26px] xl:text-[36px] text-[#888888]">
         {discount}
       </div>
-      <button className="bg-[#68FFA5] w-[80%] rounded-[15px] py-3 font-poppins font-semibold leading-[20px] text-[20px]">
+
+      <button
+        className="bg-[#68FFA5] w-[80%] rounded-[15px] py-3 font-poppins font-semibold leading-[20px] text-[20px]"
+        onClick={goToPage}
+      >
         {btnTitle}
       </button>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { FaUser } from "react-icons/fa"; // Import black user icon
+import { useNavigate } from "react-router-dom";
 
 type FormData = {
   firstName: string;
@@ -20,9 +21,10 @@ const AddressForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
+    navigate("/homepage");
   };
 
   return (

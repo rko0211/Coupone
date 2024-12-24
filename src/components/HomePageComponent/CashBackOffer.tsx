@@ -9,7 +9,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../shared/SectionHeading";
 import MONDOfarm from "../../assets/smallimage.png";
 interface CardData {
   id: number;

@@ -11,6 +11,8 @@ import EmailOtpVerification from "./components/authComponents/otpverification/Em
 import PhoneOtpVerification from "./components/authComponents/otpverification/PhoneOtpVerification";
 import HomeForm from "./pages/HomeForm";
 import HomePage from "./pages/HomePage";
+import AmazonPage from "./pages/AmazonPage";
+import ListPage from "./pages/ListPage";
 // import Carousel from "./components/shared/Carousel";
 // import HorizontalRuler from "./components/shared/HorizontalRuler";
 // import Navbar from "./components/shared/Navbar";
@@ -18,7 +20,6 @@ import HomePage from "./pages/HomePage";
 const App: React.FC = () => {
   return (
     <>
-      
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/HomePage" element={<HomePage />} />
@@ -30,6 +31,9 @@ const App: React.FC = () => {
         <Route path="/createnewpassword" element={<CreateNewPassword />} />
         <Route path="/checkemail" element={<Checkemail />} />
         <Route path="/form" element={<HomeForm />} />
+        <Route path="/amazon" element={<AmazonPage />} />
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/listpage" element={<ListPage />} />
       </Routes>
     </>
   );

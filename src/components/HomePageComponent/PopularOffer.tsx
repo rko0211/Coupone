@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../shared/SectionHeading";
 import MONDOframe from "../../assets/MONDOfarm.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { Card } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const PopularOffer: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -146,40 +147,47 @@ const PopularOffer: React.FC = () => {
           </div>
         </div>
         <div className="mt-4">
-          <Swiper
-            spaceBetween={16}
-            slidesPerView={"auto"}
-            navigation={false}
-            pagination={false}
-            mousewheel={false}
-            keyboard={true}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper "
+          <Carousel
+            opts={{
+              align: "center",
+            }}
+            className="w-full "
           >
-            {cards[activeTab]?.map((card) => (
-              <SwiperSlide className="!w-max" key={card.id}>
-                <div
-                  key={card.id}
-                  className=" w-[240px] border  rounded-[4px] p-4 shadow-custom flex flex-col items-center"
+            <CarouselContent>
+              {cards[activeTab]?.map((item, index) => (
+                <CarouselItem
+                  key={index}
+                  className="w-full md:basis-1/2 lg:basis-1/4"
                 >
-                  <img
-                    src={card.imgsrc}
-                    alt="Company Logo"
-                    className="w-[160px]"
-                  />
-                  <p className="text-gray-700 mb-1 font-semibold font-[Poppins] leading-[30px] text-[20px]">
-                    {card.title}
-                  </p>
-                  <p className=" my-4  font-semibold text-[18px] leading-[27px] font-[Poppins]">
-                    {card.subtitle}
-                  </p>
-                  <button className="bg-[#248D50] font-semibold text-white py-2 px-8 rounded-sm hover:bg-green-600">
-                    {card.buttonText}
-                  </button>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  <div className="p-1 w-max">
+                    <Card className="w-max">
+                      <div
+                        key={item.id}
+                        className=" w-[240px] border  rounded-[4px] p-4 shadow-custom flex flex-col items-center"
+                      >
+                        <img
+                          src={item.imgsrc}
+                          alt="Company Logo"
+                          className="w-[160px]"
+                        />
+                        <p className="text-gray-700 mb-1 font-semibold font-[Poppins] leading-[30px] text-[20px]">
+                          {item.title}
+                        </p>
+                        <p className=" my-4  font-semibold text-[18px] leading-[27px] font-[Poppins]">
+                          {item.subtitle}
+                        </p>
+                        <button className="bg-[#248D50] font-semibold text-white py-2 px-8 rounded-sm hover:bg-green-600">
+                          {item.buttonText}
+                        </button>
+                      </div>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </div>
@@ -187,3 +195,23 @@ const PopularOffer: React.FC = () => {
 };
 
 export default PopularOffer;
+
+// cards[activeTab]?
+
+{
+  /* <div
+  key={card.id}
+  className=" w-[240px] border  rounded-[4px] p-4 shadow-custom flex flex-col items-center"
+>
+  <img src={card.imgsrc} alt="Company Logo" className="w-[160px]" />
+  <p className="text-gray-700 mb-1 font-semibold font-[Poppins] leading-[30px] text-[20px]">
+    {card.title}
+  </p>
+  <p className=" my-4  font-semibold text-[18px] leading-[27px] font-[Poppins]">
+    {card.subtitle}
+  </p>
+  <button className="bg-[#248D50] font-semibold text-white py-2 px-8 rounded-sm hover:bg-green-600">
+    {card.buttonText}
+  </button>
+</div>; */
+}

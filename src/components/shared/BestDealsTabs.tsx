@@ -14,8 +14,7 @@ import BestDealsCard from "./BestDealsCard";
 
 const BestDealsTabs: React.FC = () => {
   const [defaultSelect1, setDefaultSelect1] = useState("Categories");
-  const [defaultSelect2, setDefaultSelect2] = useState(false);
-  const [defaultSelect3, setDefaultSelect3] = useState(false);
+
   return (
     <Tabs defaultValue="filters" className=" mx-auto">
       <TabsList className="grid grid-cols-4  gap-4 justify-items-center items-center w-full !bg-none">
@@ -94,19 +93,13 @@ const BestDealsTabs: React.FC = () => {
           </div>
         </TabsContent>
         <TabsContent value="categories">
-          <div>
-            <BestDealsCard />
-          </div>
+          <div>Categories Section</div>
         </TabsContent>
         <TabsContent value="location">
-          <div>
-            <BestDealsCard />
-          </div>
+          <div>Location Section</div>
         </TabsContent>
         <TabsContent value="pricing">
-          <div>
-            <BestDealsCard />
-          </div>
+          <div>Pricing Section</div>
         </TabsContent>
       </div>
     </Tabs>

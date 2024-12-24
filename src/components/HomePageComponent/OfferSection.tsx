@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import CardComponent from "./CardComponent";
+import CardComponent from "../shared/CardComponent";
 
 const OfferSection: React.FC = () => {
   return (

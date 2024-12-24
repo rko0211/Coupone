@@ -16,7 +16,7 @@ import brand3 from "../../assets/brand3.png";
 import brand4 from "../../assets/brand4.png";
 import brand5 from "../../assets/brand5.png";
 import brand6 from "../../assets/brand6.png";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../shared/SectionHeading";
 
 const BrandSection: React.FC = () => {
   const smallCards = [
