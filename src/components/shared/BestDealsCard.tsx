@@ -80,6 +80,7 @@ const BestDealsCard: React.FC<CardData> = ({
 }) => {
   const navigate = useNavigate();
   const goToPage = () => {
+    console.log(id);
     navigate("/amazon");
   };
   return (

@@ -1,6 +1,6 @@
-import * as React from "react";
+// import * as React from "react";
 import carousel1 from "../../assets/carousel1.png";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,

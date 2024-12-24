@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SectionHeading from "../shared/SectionHeading";
 import MONDOframe from "../../assets/MONDOfarm.png";
 import { Card } from "@/components/ui/card";
