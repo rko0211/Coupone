@@ -1,14 +1,14 @@
-import BrandSection from "@/components/HomePageComponent/BrandSection";
-import CarouselComponent from "@/components/HomePageComponent/CarouselComponent";
-import CashBackOffer from "@/components/HomePageComponent/CashBackOffer";
-import Faq from "@/components/HomePageComponent/Faq";
+import BrandSection from "@/components/homePageComponents/BrandSection";
+import CarouselComponent from "@/components/homePageComponents/CarouselComponent";
+import CashBackOffer from "@/components/homePageComponents/CashBackOffer";
+import Faq from "@/components/homePageComponents/Faq";
 import Footer from "@/components/shared/Footer";
-import HorizontalRuler from "@/components/HomePageComponent/HorizontalRuler";
+import HorizontalRuler from "@/components/homePageComponents/HorizontalRuler";
 import Navbar from "@/components/shared/Navbar";
-import OfferSection from "@/components/HomePageComponent/OfferSection";
-import PopularOffer from "@/components/HomePageComponent/PopularOffer";
-import ReviewSection from "@/components/HomePageComponent/ReviewSection";
-import TrabdingProduct from "@/components/HomePageComponent/TrabdingProduct";
+import OfferSection from "@/components/homePageComponents/OfferSection";
+import PopularOffer from "@/components/homePageComponents/PopularOffer";
+import ReviewSection from "@/components/homePageComponents/ReviewSection";
+import TrabdingProduct from "@/components/homePageComponents/TrabdingProduct";
 import React from "react";
 // import ListPage from "./ListPage";
 
