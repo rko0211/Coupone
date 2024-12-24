@@ -28,8 +28,12 @@ const AmazonPageHeader: React.FC = () => {
         </div>
 
         {/* Right Section */}
-        <div className=" w-full lg:w-[40%] flex justify-center items-center">
-          <img src={percentageImage} alt="Coupon Icon" className="" />
+        <div className="w-full lg:w-[40%] max-h-[500px] flex justify-center items-center">
+          <img
+            src={percentageImage}
+            alt="Coupon Icon"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
       </div>
     </div>

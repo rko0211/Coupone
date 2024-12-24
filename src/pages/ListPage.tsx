@@ -9,9 +9,7 @@ const ListPage: React.FC = () => {
     <div>
       <Navbar />
       <ListPageHeader />
-      <div>
-        <BestDealsTabs />
-      </div>
+      <BestDealsTabs />
       <ListPagePreeFooterSection />
       <Footer />
     </div>
