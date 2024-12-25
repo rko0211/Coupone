@@ -13,6 +13,7 @@ import HomeForm from "./pages/HomeForm";
 import HomePage from "./pages/HomePage";
 import AmazonPage from "./pages/AmazonPage";
 import ListPage from "./pages/ListPage";
+import KfcPage from "./pages/KfcPage";
 // import Carousel from "./components/shared/Carousel";
 // import HorizontalRuler from "./components/shared/HorizontalRuler";
 // import Navbar from "./components/shared/Navbar";
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <Route path="/amazon" element={<AmazonPage />} />
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/listpage" element={<ListPage />} />
+        <Route path="/kfc" element={<KfcPage />} />
       </Routes>
     </>
   );

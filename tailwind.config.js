@@ -115,6 +115,9 @@ export default {
 				'custom-gradient-p3': 'linear-gradient(270deg, color(display-p3 0.408 1.000 0.647) 0%, color(display-p3 0.749 1.000 0.851) 49.5%)',
 
 				'backGroundGradient': 'linear-gradient(270deg, rgba(0, 255, 156, 0.5) 0%, rgba(255, 255, 255, 0.5) 56.1%)',
+				'pricingCardGradient': 'linear-gradient(270deg, #FFFFFF 57.6%, #D0FFE8 100%)',
+				'custom-radial-gradient':
+					'radial-gradient(50.14% 50% at 50% 50%, #D0FFE8 13.64%, rgba(0, 255, 156, 0.885) 85.8%, rgba(0, 155, 94, 0.77) 100%)',
 			},
 		}
 	},

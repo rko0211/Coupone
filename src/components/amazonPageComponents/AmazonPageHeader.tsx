@@ -8,21 +8,21 @@ const AmazonPageHeader: React.FC = () => {
         <img src={amazonpage} alt="Amazon" />
       </div>
 
-      <div className="flex gap-5 p-4 items-center justify-center flex-wrap-reverse">
+      <div className="flex flex-wrap-reverse gap-5 p-4 items-start justify-center ">
         {/* Left Section */}
         <div className=" w-full lg:w-[40%]">
-          <h1 className="font-poppins font-semibold text-[48px] leading-[40px] tracking-[0.02em] mb-10">
+          <h1 className="font-poppins font-semibold text-[48px] leading-[40px] tracking-[0.02em] mb-24">
             Description
           </h1>
 
-          <p className="font-poppins font-normal text-[24px] leading-[40px] tracking-[0.02em] mb-6">
+          <p className="font-poppins font-normal text-[24px] leading-[40px] tracking-[0.02em] mb-16">
             Get an exclusive deal with our special coupon code.{" "}
-            <span className="font-bold">Enjoy 20% off</span> your next purchase.
-            Offer valid for a limited time only. Watch a product video to
-            collect a free coupon and maximize your savings.
+            <span className="font-bold text-[32px]">Enjoy 20% off</span> your
+            next purchase. Offer valid for a limited time only. Watch a product
+            video to collect a free coupon and maximize your savings.
           </p>
 
-          <button className="bg-[#4A4A4A] rounded-[15px] text-white py-5 px-10 font-poppins font-semibold text-[30px] leading-[48px]">
+          <button className="bg-[#4A4A4A] rounded-[15px] text-white py-5 px-10 font-poppins font-semibold text-[30px] leading-[48px] shadow-custom">
             ADD TO CART
           </button>
         </div>
