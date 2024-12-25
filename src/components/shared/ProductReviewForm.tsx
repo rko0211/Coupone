@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { useForm, Controller } from "react-hook-form";
 
@@ -51,7 +51,6 @@ const ProductReviewForm: React.FC<ReviewListProps> = ({
 
     // Push the new review into the reviewData array
     setData([...reviewData, newReview]);
-    console.log(reviewData);
   };
 
   const [hoveredRating, setHoveredRating] = useState(0);
