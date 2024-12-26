@@ -10,10 +10,10 @@ const CouponeUsagePricing: React.FC<CouponeType> = ({ imagesrc }) => {
         <div className="grid mx-auto items-center grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
           {/* Usage Card */}
           <div className="bg-white rounded-[20px] shadow-custom shadow-[#00000040] p-6 h-[700px]">
-            <h2 className="text-[32px] leading-[40px] font-semibold mb-4">
+            <h2 className="text-[1.5em]  sm:text-[2em] leading-[40px] font-semibold mb-4">
               Usage
             </h2>
-            <div className="w-full h-[90%] flex items-center justify-center ">
+            <div className="w-full !h-[90%] my-auto flex items-center justify-center ">
               <div className="bg-pricingCardGradient  h-[238px] rounded-[20px] p-4  shadow-custom shadow-[#00000040] w-full flex justify-center items-center object-contain overflow-hidden ">
                 <img src={imagesrc} alt="Amazon" className="object-contain" />
               </div>
@@ -22,12 +22,12 @@ const CouponeUsagePricing: React.FC<CouponeType> = ({ imagesrc }) => {
 
           {/* Pricing Details Card */}
           <div className="bg-white rounded-[20px] shadow-custom shadow-[#00000040] p-6 h-[700px]">
-            <h2 className="text-[32px] leading-[40px] font-semibold mb-4">
+            <h2 className=" text-[1.5em]  sm:text-[2em] leading-[40px] block font-semibold mb-4">
               Pricing Details
             </h2>
-            <div className="w-full h-[90%] flex items-center justify-center ">
+            <div className="w-full !h-[90%] flex items-center justify-center ">
               <div className="bg-pricingCardGradient rounded-[20px] p-5  shadow-custom shadow-[#00000040] w-full ">
-                <div className="text-[24px] font-normal font-poppins tracking-[0.02em] leading-[100px]">
+                <div className=" text-[1.1em] sm:text-[1.5em] font-normal font-poppins tracking-[0.02em] leading-[100px]">
                   <p>Original Price: $100.00</p>
                   <p className="!leading-8">
                     Discount: 20% Off <br />

@@ -33,6 +33,7 @@ const ProductReviewForm: React.FC<ReviewListProps> = ({
   const {
     register,
     handleSubmit,
+    reset,
     control,
     formState: { errors },
   } = useForm<FormData>();
@@ -51,6 +52,8 @@ const ProductReviewForm: React.FC<ReviewListProps> = ({
 
     // Push the new review into the reviewData array
     setData([...reviewData, newReview]);
+
+    reset();
   };
 
   const [hoveredRating, setHoveredRating] = useState(0);
@@ -81,7 +84,7 @@ const ProductReviewForm: React.FC<ReviewListProps> = ({
                     key={index}
                     className={`cursor-pointer text-3xl border ${
                       hoveredRating > index || field.value > index
-                        ? "text-yellow-400"
+                        ? "text-yellow-500"
                         : "text-gray-300"
                     }`}
                     onMouseEnter={() => setHoveredRating(index + 1)} // Set hovered rating
@@ -256,6 +259,9 @@ const ProductReviewForm: React.FC<ReviewListProps> = ({
           <p className="text-red-500 text-sm mt-2">{errors.terms.message}</p>
         )}
 
+        <div>
+          You will be able to receive emails in connection with this review (eg if others comment on your review)
+        </div>
         {/* Submit Button */}
         <button
           type="submit"

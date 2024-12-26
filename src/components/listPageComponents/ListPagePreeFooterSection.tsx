@@ -23,8 +23,12 @@ const ListPagePreeFooterSection: React.FC = () => {
           {/* backGroundGradient */}
           {/* Right Content */}
 
-          <div className="bg-backGroundGradient  rounded-full w-[500px] h-[500px] flex justify-center items-center">
-            <img src={giftpic} alt="Gift Picture" className="" />
+          <div className="bg-backGroundGradient  rounded-full w-[300px] h-[300px] sm:w-[330px] sm:h-[330px] md:w-[500px] md:h-[500px] flex justify-center items-center">
+            <img
+              src={giftpic}
+              alt="Gift Picture"
+              className="object-contain max-h-full max-w-full"
+            />
           </div>
         </div>
       </div>

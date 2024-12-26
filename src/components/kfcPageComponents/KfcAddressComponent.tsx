@@ -7,10 +7,10 @@ const KfcAddressComponent: React.FC = () => {
         <div className="rounded-[30px] shadow-custom bg-white grid grid-col-1  md:grid-cols-2 gap-10 p-10 ">
           {/* Left container */}
           <div className="flex flex-col justify-center items-start">
-            <div className="font-poppins font-medium tracking-[0.02em] leading-[40px] text-[60px]">
+            <div className="font-poppins font-medium tracking-[0.02em] leading-[40px] text-[3em] sm:text-[4em]">
               Address
             </div>
-            <div className="font-poppins text-[24px] leading-[40px] font-normal tracking-[0.02em] text-wrap mt-16">
+            <div className="font-poppins text-[1em] sm:text-[1.5em] leading-[40px] font-normal tracking-[0.02em] text-wrap mt-16">
               1234 Elm Street, Suite 567
               <br />
               Springfield, IL 62704

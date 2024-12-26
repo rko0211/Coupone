@@ -69,7 +69,10 @@ export default {
 					max: '1234px'
 				},
 				searchBar: '771px',
-				customlg: '1125px'
+				customlg: '1125px',
+				footerWidth: {
+					max:'1207px',
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

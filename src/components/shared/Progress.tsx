@@ -42,7 +42,7 @@ const Progress: React.FC<ReviewListProps> = ({ reviewData }) => {
 
         {/* Right Section */}
         <div className="rounded-[25px] shadow-custom p-4">
-          <h2 className="text-[32px]  font-semibold font-poppins leading-[48px] mb-5">
+          <h2 className="text-[1.6em] sm:text-[2em]  font-semibold font-poppins leading-[48px] mb-5">
             Rating Breakdown
           </h2>
           <div className="flex flex-col gap-10">

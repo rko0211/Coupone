@@ -70,10 +70,10 @@ const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="row2 w-full grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center mt-12">
+        <div className="row2 w-full flex flex-wrap gap-2 justify-between footerWidth:justify-center items-center mt-12">
           {/* Blog 1 */}
           <div className="w-full md:w-[520px]">
-            <div className="text-[20px] leading-[30px] text-[#F0F0F0] lg:border-l-4 py-2 px-4 font-medium">
+            <div className="text-[20px] leading-[30px] text-[#F0F0F0] md:border-l-4 py-2 px-4 font-medium">
               Latest From The Blog
             </div>
             <div className="flex flex-wrap gap-4 justify-between items-center p-4 bg-[#004805] rounded-[8px] mt-4">
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
 
           {/* Blog 2 */}
           <div className="w-full md:w-[520px]">
-            <div className="text-[20px] leading-[30px] text-[#F0F0F0] lg:border-l-4 py-2 px-4 font-medium">
+            <div className="text-[20px] leading-[30px] text-[#F0F0F0] md:border-l-4 py-2 px-4 font-medium">
               We are Hiring
             </div>
             <div className="flex flex-col justify-between items-start p-4 bg-[#004805] rounded-[8px] mt-4">

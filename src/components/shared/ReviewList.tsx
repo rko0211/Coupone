@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-// import UserContext from "../../context/UserContext";
 import Rating from "@mui/material/Rating";
+import avatar from "../../assets/Profile Image.png";
+
+import { BsReply } from "react-icons/bs";
 
 interface ReviewData {
   rating: number;
@@ -26,12 +28,12 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviewData }) => {
     <div className="w-[90%] mx-auto my-12">
       <div className="rounded-[20px] shadow-custom p-10">
         <div className="flex justify-between items-center mb-5">
-          <h2 className="text-[36px] font-normal leading-[54px]">
+          <h2 className=" text-[1.8em] sm:text-[2.25em] font-normal leading-[54px]">
             Reviews ({reviewData.length})
           </h2>
           <button
             onClick={toggleReviews}
-            className="font-poppins font-semibold px-10 py-2 text-white bg-[#404040] rounded-[15px] text-[32px] leading-[48px]"
+            className="font-poppins font-semibold px-5 py-2 sm:px-10 sm:py-2 text-white bg-[#404040] rounded-[15px] text-[1.3em] sm:text-[2em] leading-[48px]"
           >
             {showAllReviews ? "Less" : "More"}
           </button>
@@ -60,13 +62,22 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviewData }) => {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <div className="text-blue-500 font-poppins leading-[20px] text-[18px]">
+                  <div className="text-blue-500 font-poppins leading-[20px] text-[18px] flex items-center justify-center gap-2 ">
+                    <BsReply className="transform -scale-x-100 font-semibold" />
                     Reply
                   </div>
 
                   <div className="flex items-center gap-2 font-poppins text-[18px]">
-                    <div>{review.nickname}</div>
-                    <div className="w-10 h-10 rounded-full bg-black"></div>
+                    <div className="font-poppins font-medium">
+                      {review.nickname}
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-black">
+                      <img
+                        src={avatar}
+                        alt="Profile"
+                        className="h-full w-full object-contain max-w-full max-h-full"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
