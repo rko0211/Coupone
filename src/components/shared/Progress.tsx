@@ -34,7 +34,7 @@ const Progress: React.FC<ReviewListProps> = ({ reviewData }) => {
   const maxPercentage = Math.max(...ratings.map((rating) => rating.percentage));
   return (
     <div className="w-[90%] mx-auto my-16">
-      <div className="grid gap-6 justify-center md:grid-cols-2 grid-cols-1 bg-white p-6 rounded-lg  ">
+      <div className="grid gap-6 justify-center md:grid-cols-2 grid-cols-1 bg-white md:p-6 rounded-lg  ">
         {/* Left Section */}
         <div className="flex justify-center items-center  rounded-[25px] shadow-custom p-4">
           <img src={progressimage} alt="Smiley Design" className="" />

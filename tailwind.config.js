@@ -56,7 +56,9 @@ export default {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}
+				},
+				'p3-gray': 'color(display-p3 0.949 0.949 0.949)',
+				'p3-green': 'color(display-p3 0.675 1.000 0.804)',
 			},
 			screens: {
 				customMax: {
@@ -72,7 +74,10 @@ export default {
 				customlg: '1125px',
 				footerWidth: {
 					max:'1207px',
-				}
+				},
+				deliveryForm: {
+					max:'768px'
+,				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

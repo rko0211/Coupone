@@ -8,9 +8,9 @@ const KfcPageHeader: React.FC = () => {
         <img src={kfc} alt="Amazon" />
       </div>
 
-      <div className="w-[90%] mx-auto my-12 ">
+      <div className="w-[90%] mx-auto my-10 ">
         <div className="w-full">
-          <h1 className="font-poppins font-semibold text-[2em] sm:text-[3em] leading-[40px] tracking-[0.02em] mb-24">
+          <h1 className="font-poppins font-semibold text-[2em] sm:text-[3em] leading-[40px] tracking-[0.02em] mb-8 md:mb-15">
             Description
           </h1>
 

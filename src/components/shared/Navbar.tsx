@@ -5,6 +5,7 @@ import { RiNotification3Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { MenubarDemo } from "./NavbarNotification";
 import UserInfo from "./UserInfo";
+import { NavLink } from "react-router-dom";
 
 interface NavButtonProps {
   icon: React.ReactNode; // For React elements (like <RiNotification3Line />)
@@ -44,9 +45,9 @@ const Navbar: React.FC = () => {
   const currentColor = "black";
   return (
     <>
-      <div className="flex justify-center items-center bg-navbarBgColor shadow-custom p-5">
+      <div className="flex justify-center items-center bg-navbarBgColor shadow-custom p-3">
         <div className=" flex justify-between items-center w-full h-[56px]">
-          <div className="font-poppins text-[32px] font-semibold leading-[40px]  decoration-skip-ink-none ml-5">
+          <div className="font-poppins text-[2em] font-semibold leading-[40px]  decoration-skip-ink-none ml-5">
             Logo
           </div>
 
@@ -54,7 +55,7 @@ const Navbar: React.FC = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full py-5 px-[16px] pr-[375px] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 font-poppins text-gray-700 placeholder-gray-500 shadow-custom -ml-5  navBarWidth:hidden"
+              className="w-full py-3 px-[16px] pr-[375px] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 font-poppins text-gray-700 placeholder-gray-500 shadow-custom -ml-5  navBarWidth:hidden"
             />
           </div>
 
@@ -75,7 +76,31 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="searchbar navBarWidth:flex justify-center items-center gap-2  hidden p-2">
+
+      <div className="py-3 bg-gradient-to-r from-p3-gray to-p3-green">
+        <ul className="flex justify-evenly items-center gap-10 font-poppins font-medium text-[20px]">
+          <NavLink to="/listpage">
+            {" "}
+            <li className="cursor-pointer hover:text-green-600 hover:scale-110 transition duration-300 ease-in-out">
+              Categories
+            </li>
+          </NavLink>
+          <NavLink to="/delivery">
+            {" "}
+            <li className="cursor-pointer hover:text-green-600 hover:scale-110 transition duration-300 ease-in-out">
+              Cart
+            </li>
+          </NavLink>
+          <NavLink to="/kfc">
+            {" "}
+            <li className="cursor-pointer hover:text-green-600 hover:scale-110 transition duration-300 ease-in-out">
+              Categories
+            </li>
+          </NavLink>
+        </ul>
+      </div>
+
+      <div className="searchbar navBarWidth:flex justify-center items-center gap-2  hidden p-2 mt-4">
         <input
           type="text"
           placeholder="Search"

@@ -22,15 +22,15 @@ const DeliveryInformation: React.FC = () => {
     console.log(data);
   };
   return (
-    <div>
+    <div className="deliveryForm:w-full">
       {/* Delivery Information */}
-      <div className="p-4">
+      <div className="p-4 ">
         <h2 className="text-xl font-semibold mb-6">Delivery Information</h2>
         <form
-          className="shadow-custom py-10 px-8 font-poppins bg-white"
+          className="shadow-custom py-10 px-8 font-poppins bg-white "
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block my-2 font-normal">
                 Name
@@ -102,7 +102,7 @@ const DeliveryInformation: React.FC = () => {
               )}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="state" className="block my-2 font-normal">
                 State
@@ -119,7 +119,7 @@ const DeliveryInformation: React.FC = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="zip" className="block my-2 font-normal">
                   ZIP

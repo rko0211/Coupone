@@ -11,7 +11,7 @@ const AmazonPageHeader: React.FC = () => {
       <div className="flex flex-wrap-reverse gap-5 p-4 items-start justify-center ">
         {/* Left Section */}
         <div className=" w-full lg:w-[40%]">
-          <h1 className="font-poppins font-semibold text-[2em] sm:text-[3em] leading-[40px] tracking-[0.02em] mb-24">
+          <h1 className="font-poppins font-semibold text-[2em] sm:text-[3em] leading-[40px] tracking-[0.02em] mb-8 md:mb-24">
             Description
           </h1>
 

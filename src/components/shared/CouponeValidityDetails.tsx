@@ -2,7 +2,7 @@ import React from "react";
 import couponevalidityImage from "../../assets/couponevalidityImage.png";
 const CouponeValidityDetails: React.FC = () => {
   return (
-    <div className="mt-40">
+    <div className="mt-20">
       <div>
         <div className="font-semibold font-poppins text-[2em] md:text-[4em] tracking-[0.02em] leading-[40px] md:leading-[80px] p-5 lg:px-[87px] text-[#404040] mb-10">
           Validity & <br />

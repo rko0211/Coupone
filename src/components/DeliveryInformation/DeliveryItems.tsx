@@ -45,11 +45,11 @@ const DeliveryItems: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="deliveryForm:w-full">
       {/* Items Section */}
-      <div className="p-4">
+      <div className="p-4 ">
         <h2 className="text-xl font-semibold mb-6">Item</h2>
-        <div className="flex flex-col gap-10 items-center shadow-custom p-10 px-16 bg-white">
+        <div className="flex flex-col gap-10 items-center shadow-custom py-10 px-5 bg-white">
           {items.map((item) => (
             <div
               key={item.id}
@@ -69,7 +69,7 @@ const DeliveryItems: React.FC = () => {
                     />
                   </div>
                 </div>
-                <div className="flex justify-between items-center space-x-2">
+                <div className="flex  justify-between items-center space-x-2">
                   <div>ADD ITEM</div>
                   <div className="border border-black rounded-[15px] p-2">
                     <button

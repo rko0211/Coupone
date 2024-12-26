@@ -4,9 +4,9 @@ import OrderSummary from "./OrderSummary";
 
 const DeliveryForm: React.FC = () => {
   return (
-    <div className=" mt-14">
+    <div className=" w-[90%] mx-auto mt-14">
       {/* Main Container */}
-      <div className="flex flex-wrap  justify-evenly gap-10">
+      <div className="flex flex-wrap  justify-center gap-10">
         <DeliveryInformation />
         <DeliveryItems />
       </div>

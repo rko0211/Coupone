@@ -3,7 +3,7 @@ import kfcshop from "../../assets/kfcshop.png";
 const KfcAddressComponent: React.FC = () => {
   return (
     <div className="my-16">
-      <div className="bg-[#248D50D4] py-20 px-10 flex justify-center items-center">
+      <div className="bg-[#248D50D4] px-5 py-20 md:px-10 flex justify-center items-center">
         <div className="rounded-[30px] shadow-custom bg-white grid grid-col-1  md:grid-cols-2 gap-10 p-10 ">
           {/* Left container */}
           <div className="flex flex-col justify-center items-start">
