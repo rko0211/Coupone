@@ -29,10 +29,10 @@ const OfferSection: React.FC = () => {
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="w-full md:basis-1/3 lg:basis-1/4"
+              className="w-full md:basis-1/3 lg:basis-1/4  mx-5"
             >
-              <div className="p-1">
-                <Card className="w-max">
+              <div className="p-1 ">
+                <Card className="w-max ">
                   <CardComponent />
                 </Card>
               </div>

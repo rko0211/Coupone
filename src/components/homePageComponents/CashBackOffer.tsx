@@ -79,7 +79,7 @@ const CashBackOffer: React.FC = () => {
             {cardsItems.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="w-full md:basis-1/2 lg:basis-1/4"
+                className="w-full md:basis-1/2 lg:basis-1/4 mx-4"
               >
                 <div className="p-1 w-max">
                   <Card className="w-max">
@@ -120,5 +120,3 @@ const CashBackOffer: React.FC = () => {
 };
 
 export default CashBackOffer;
-
-

@@ -11,7 +11,6 @@ import {
 import SectionHeading from "../shared/SectionHeading";
 import Rating from "@mui/material/Rating";
 
-
 const ReviewSection: React.FC = () => {
   const smallCards = [
     {
@@ -64,7 +63,7 @@ const ReviewSection: React.FC = () => {
             {smallCards.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="w-full md:basis-1/2 lg:basis-1/4"
+                className="w-full md:basis-1/2 lg:basis-1/4 mx-4"
               >
                 <div className="p-1 w-max">
                   <Card className="w-max">
@@ -102,5 +101,3 @@ const ReviewSection: React.FC = () => {
 };
 
 export default ReviewSection;
-
-
