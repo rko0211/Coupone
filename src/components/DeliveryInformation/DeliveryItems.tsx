@@ -1,28 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import amazonimg from "../../assets/amazon.png";
 import discount from "../../assets/discount.png";
 import spotify from "../../assets/spotify.png";
+import UserContext from "../../context/UserContext";
 
 interface ItemType {
   id: number;
   image: string;
   discountText: string;
   discountImage: string;
+  setNumber: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const DeliveryItems: React.FC = () => {
+  const userContext = useContext(UserContext);
+  const { setNumberOne, setNumberTwo } = userContext;
   const items: ItemType[] = [
     {
       id: 1,
       image: amazonimg,
       discountText: "Upto 82% OFF",
       discountImage: discount,
+      setNumber: setNumberOne,
     },
     {
       id: 2,
       image: spotify,
       discountText: "Upto 82% OFF",
       discountImage: discount,
+
+      setNumber: setNumberTwo,
     },
   ];
 
@@ -74,7 +81,12 @@ const DeliveryItems: React.FC = () => {
                   <div className="border border-black rounded-[15px] p-2">
                     <button
                       className="px-3 py-1 rounded"
-                      onClick={() => decrementCount(item.id)}
+                      onClick={() => {
+                        decrementCount(item.id);
+                        if (itemCounts[item.id] > 0) {
+                          item.setNumber((prev) => prev - 1);
+                        }
+                      }}
                     >
                       -
                     </button>
@@ -83,7 +95,11 @@ const DeliveryItems: React.FC = () => {
                     </span>
                     <button
                       className="px-3 py-1 rounded"
-                      onClick={() => incrementCount(item.id)}
+                      onClick={() => {
+                        incrementCount(item.id);
+
+                        item.setNumber((prev) => prev + 1);
+                      }}
                     >
                       +
                     </button>

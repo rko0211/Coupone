@@ -33,6 +33,9 @@ const UserContextProvider: React.FC<UserReviewProviderProps> = ({
 
   const [reviewData, setReviewData] = useState<ReviewData[]>(dummyData);
   const [kfcReviewData, setKfcReviewData] = useState<ReviewData[]>(dummyData);
+  const [numberOfItems1, setNumberOne] = useState<number>(0);
+  const [numberOfItems2, setNumberTwo] = useState<number>(0);
+
   const AmazonData = {
     reviewData,
     setReviewData,
@@ -42,7 +45,16 @@ const UserContextProvider: React.FC<UserReviewProviderProps> = ({
     setKfcReviewData,
   };
   return (
-    <UserReviewContext.Provider value={{ AmazonData, KfcData }}>
+    <UserReviewContext.Provider
+      value={{
+        AmazonData,
+        KfcData,
+        numberOfItems1,
+        setNumberOne,
+        numberOfItems2,
+        setNumberTwo,
+      }}
+    >
       {children}
     </UserReviewContext.Provider>
   );

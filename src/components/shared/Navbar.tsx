@@ -47,9 +47,11 @@ const Navbar: React.FC = () => {
     <>
       <div className="flex justify-center items-center bg-navbarBgColor shadow-custom p-3">
         <div className=" flex justify-between items-center w-full h-[56px]">
-          <div className="font-poppins text-[2em] font-semibold leading-[40px]  decoration-skip-ink-none ml-5">
-            Logo
-          </div>
+          <NavLink to="/HomePage">
+            <div className="font-poppins text-[2em] font-semibold leading-[40px]  decoration-skip-ink-none ml-5">
+              Logo
+            </div>
+          </NavLink>
 
           <div className="searchbar ">
             <input
@@ -77,7 +79,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-3 bg-gradient-to-r from-p3-gray to-p3-green">
+      <div className="py-2 bg-gradient-to-r from-p3-gray to-p3-green">
         <ul className="flex justify-evenly items-center gap-10 font-poppins font-medium text-[20px]">
           <NavLink to="/listpage">
             {" "}
@@ -91,12 +93,12 @@ const Navbar: React.FC = () => {
               Cart
             </li>
           </NavLink>
-          <NavLink to="/kfc">
+          {/* <NavLink to="/kfc">
             {" "}
             <li className="cursor-pointer hover:text-green-600 hover:scale-110 transition duration-300 ease-in-out">
               Categories
             </li>
-          </NavLink>
+          </NavLink> */}
         </ul>
       </div>
 

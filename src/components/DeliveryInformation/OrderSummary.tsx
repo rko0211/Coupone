@@ -1,6 +1,8 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import UserContext from "../../context/UserContext";
 const OrderSummary: React.FC = () => {
+  const userContext = useContext(UserContext);
+  const { numberOfItems1, numberOfItems2 } = userContext;
   return (
     <div className="w-[90%]  mx-auto mt-14">
       <div className=" bg-white border rounded-md shadow-md">
@@ -8,11 +10,15 @@ const OrderSummary: React.FC = () => {
         <div className="p-5 border-b">
           <div className="flex justify-between mb-2">
             <span className="text-gray-700 font-medium">Subtotal</span>
-            <span className="text-gray-900 font-semibold">$1250.32</span>
+            <span className="text-gray-900 font-semibold">
+              ${numberOfItems1 * 100 + numberOfItems2 * 200}
+            </span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-700 font-medium">Shopping</span>
-            <span className="text-gray-900 font-semibold">---</span>
+            <span className="text-gray-900 font-semibold">
+              {numberOfItems1 + numberOfItems2}
+            </span>
           </div>
         </div>
 
@@ -20,7 +26,9 @@ const OrderSummary: React.FC = () => {
         <div className="p-5 border-b">
           <div className="flex justify-between">
             <span className="text-gray-700 font-medium">Total (USD)</span>
-            <span className="text-gray-900 font-bold text-lg">$254</span>
+            <span className="text-gray-900 font-bold text-lg">
+              ${numberOfItems1 * 100 + numberOfItems2 * 200}
+            </span>
           </div>
         </div>
       </div>
