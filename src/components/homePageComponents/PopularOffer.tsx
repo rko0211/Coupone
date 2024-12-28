@@ -128,7 +128,7 @@ const PopularOffer: React.FC = () => {
         <div className="flex flex-col ">
           <div className="flex items-center gap-4 flex-wrap">
             {tabs.map((tab) => (
-              <div>
+              <div key={tab.id}>
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}

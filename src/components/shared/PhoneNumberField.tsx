@@ -25,7 +25,7 @@ const PhoneNumberField: React.FC<PhoneNumberInputProps> = ({
           {...register("usercountrycode", { required: true })}
         >
           {countryCodes.map((country) => (
-            <option key={country.code} value={country.code}>
+            <option key={country.id} value={country.code}>
               {country.code}
             </option>
           ))}

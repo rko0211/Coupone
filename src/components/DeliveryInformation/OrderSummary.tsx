@@ -10,13 +10,13 @@ const OrderSummary: React.FC = () => {
         <div className="p-5 border-b">
           <div className="flex justify-between mb-2">
             <span className="text-gray-700 font-medium">Subtotal</span>
-            <span className="text-gray-900 font-semibold">
+            <span className="text-gray-900 font-semibold min-w-[100px]">
               ${numberOfItems1 * 100 + numberOfItems2 * 200}
             </span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-700 font-medium">Shopping</span>
-            <span className="text-gray-900 font-semibold">
+            <span className="text-gray-900 font-semibold min-w-[100px]">
               {numberOfItems1 + numberOfItems2}
             </span>
           </div>
@@ -26,7 +26,7 @@ const OrderSummary: React.FC = () => {
         <div className="p-5 border-b">
           <div className="flex justify-between">
             <span className="text-gray-700 font-medium">Total (USD)</span>
-            <span className="text-gray-900 font-bold text-lg">
+            <span className="text-gray-900 font-bold text-lg min-w-[100px]">
               ${numberOfItems1 * 100 + numberOfItems2 * 200}
             </span>
           </div>

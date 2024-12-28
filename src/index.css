@@ -8,59 +8,6 @@
   box-sizing: border-box;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Base styling for both navigation buttons */
-.swiper-button-prev,
-.swiper-button-next {
-  background: radial-gradient(circle, #ffffff 50%, #f3f3f3 100%);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border-radius: 50%; /* Circle shape */
-  width: 50px; /* Button width */
-  height: 50px; /* Button height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black; /* Arrow color */
-  font-size: 20px; /* Arrow size */
-}
-
-/* Style for the icons inside the buttons */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-family: swiper-icons;
-  font-size: 18px; /* Adjust the size of the arrow */
-  color: black; /* Arrow color */
-}
-
-/* Add hover effects */
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background: radial-gradient(circle, #eaeaea 50%, #dcdcdc 100%);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -124,4 +71,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Remove spinner buttons in WebKit browsers (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner buttons in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Remove spinner buttons in all modern browsers */
+input[type="number"] {
+  appearance: none;
 }

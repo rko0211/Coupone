@@ -1,5 +1,5 @@
 import BrandSection from "@/components/homePageComponents/BrandSection";
-import CarouselComponent from "@/components/homePageComponents/CarouselComponent";
+// import CarouselComponent from "@/components/homePageComponents/CarouselComponent";
 import CashBackOffer from "@/components/homePageComponents/CashBackOffer";
 import Faq from "@/components/homePageComponents/Faq";
 import Footer from "@/components/shared/Footer";
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="">
       <Navbar />
-      <CarouselComponent />
+      {/* <CarouselComponent /> */}
 
       <OfferSection />
       <HorizontalRuler />
