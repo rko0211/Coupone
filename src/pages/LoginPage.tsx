@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import loginFrame from "../assets/loginFrame.png";
 
 import EmailField from "../components/shared/EmailField";
@@ -6,10 +6,14 @@ import PasswordField from "../components/shared/PasswordField";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 type Inputs = {
   useremail: string;
   userpassword: string;
+  RememberMe: boolean;
 };
 
 const LoginPage: React.FC = () => {
@@ -20,9 +24,32 @@ const LoginPage: React.FC = () => {
     formState: { isSubmitting },
   } = useForm<Inputs>();
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const [isLoading, setLoading] = useState(false);
+  const URL = `https://coupone-backend.onrender.com`;
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
-    navigate("/HomePage");
+    setLoading(true);
+    try {
+      const response = await axios.post(`${URL}/users/login`, data, {
+        withCredentials: true,
+      });
+      if (response.status === 200) {
+        toast.success(`${response.data.message}`);
+        // alert("Login successful");
+        navigate("/HomePage", { replace: true });
+      } else if (response.status === 203) {
+        toast.warn(`Please Verify Your Account!`);
+        navigate("/changeverificationmode");
+      } else if (response.status === 205) {
+        toast.warn("Please Complete Your Account!");
+        navigate("/form");
+      }
+    } catch (error: unknown) {
+      // alert("Please Registered yourself first");
+      toast.error("Please Enter Correct Email and Password!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -70,7 +97,12 @@ const LoginPage: React.FC = () => {
 
               <div className=" forgotpassword flex justify-between items-center lg:mb-9 customMax:mb-5">
                 <label className="flex items-center">
-                  <input type="checkbox" className="mr-2 w-5 h-5 rounded-sm" />
+                  <input
+                    type="checkbox"
+                    className="mr-2 w-5 h-5 rounded-sm"
+                    id="checkbox"
+                    {...register("RememberMe")}
+                  />
                   <span className="text-customLabelColor font-semibold">
                     Remember Me
                   </span>
@@ -88,7 +120,11 @@ const LoginPage: React.FC = () => {
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold"
                 disabled={isSubmitting}
               >
-                Log in
+                {isLoading ? (
+                  <CircularProgress size={30} thickness={4} value={100} />
+                ) : (
+                  "Log in"
+                )}
               </button>
             </div>
           </form>

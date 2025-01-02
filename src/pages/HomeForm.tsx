@@ -1,8 +1,10 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { FaUser } from "react-icons/fa"; // Import black user icon
 import { useNavigate } from "react-router-dom";
-
+import CircularProgress from "@mui/material/CircularProgress";
+import { toast } from "react-toastify";
 type FormData = {
   firstName: string;
   middleName: string;
@@ -19,12 +21,32 @@ const AddressForm: React.FC = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>();
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
-    navigate("/homepage");
+  const [isLoading, setLoading] = useState(false);
+  const URL = `https://coupone-backend.onrender.com`;
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    // console.log("Form data", data);
+    setLoading(true);
+    try {
+      const response = await axios.post(`${URL}/users/updateuser`, data, {
+        withCredentials: true,
+      });
+      console.log(response);
+      if (response.status === 200) {
+        toast.success(`User data save successfully`);
+        navigate("/homepage", { replace: true });
+      } else if (response.status == 205) {
+        // alert("");
+        toast.warn(`User Information already exist`);
+        navigate("/homePage", { replace: true });
+      }
+    } catch (error: unknown) {
+      toast.error(`An error occurred while creating the user.`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -306,8 +328,13 @@ const AddressForm: React.FC = () => {
             <button
               type="submit"
               className="px-6 py-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+              disabled={isSubmitting}
             >
-              Submit
+              {isLoading ? (
+                <CircularProgress size={30} thickness={4} value={100} />
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
         </form>

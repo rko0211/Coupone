@@ -15,6 +15,7 @@ import AmazonPage from "./pages/AmazonPage";
 import ListPage from "./pages/ListPage";
 import KfcPage from "./pages/KfcPage";
 import DeliveryInformationPage from "./pages/DeliveryInformationPage";
+import { ToastContainer } from "react-toastify";
 // import Carousel from "./components/shared/Carousel";
 // import HorizontalRuler from "./components/shared/HorizontalRuler";
 // import Navbar from "./components/shared/Navbar";
@@ -22,11 +23,12 @@ import DeliveryInformationPage from "./pages/DeliveryInformationPage";
 const App: React.FC = () => {
   return (
     <>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/forget-password" element={<ForgetPasswordPage />} />
-        <Route path="/Sign-up" element={<RegisterPage />} />
+        <Route path="/sign-up" element={<RegisterPage />} />
         <Route path="/emailverification" element={<EmailOtpVerification />} />
         <Route path="/phoneverification" element={<PhoneOtpVerification />} />
         <Route path="/changeverificationmode" element={<VerifyAccount />} />

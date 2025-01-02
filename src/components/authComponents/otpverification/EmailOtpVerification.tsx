@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import otpverification from "../../../assets/otpverification.png";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Inputotp from "../../shared/Inputotp";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import CircularProgress from "@mui/material/CircularProgress";
+import { toast } from "react-toastify";
 type Inputs = {
   emailotpfield: string; // Updated type to reflect array structure
 };
@@ -17,9 +19,41 @@ const EmailOtpVerification: React.FC = () => {
     formState: { isSubmitting },
   } = useForm<Inputs>();
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("Form Data:", data);
-    navigate("/form");
+  const [isLoading, setLoading] = useState(false);
+  const URL = `https://coupone-backend.onrender.com`;
+  // const location = useLocation();
+  // console.log("state value", location.state);
+  // useEffect(() => {
+  //   if (!location.state) {
+  //     navigate("/Sign-up", { replace: true });
+  //   }
+  // }, [location.state, navigate]);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    // console.log("Form Data:", data);
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        `${URL}/users/verifyOTP`,
+        { userOTP: data.emailotpfield },
+
+        { withCredentials: true }
+      );
+
+      if (response.status === 200) {
+        toast.success(`${response.data.message}`);
+        navigate("/form", { replace: true });
+      } else if (response.status === 203) {
+        toast.warn(`Please Resend OTP again!`);
+
+        navigate("/changeverificationmode", { replace: true });
+      } else if (response.status === 205) {
+        toast.warn(`Please Enter Correct OTP!`);
+      }
+    } catch (error: unknown) {
+      toast.error(`Some Internal Error occured`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,7 +81,11 @@ const EmailOtpVerification: React.FC = () => {
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold"
                 disabled={isSubmitting}
               >
-                Verify OTP
+                {isLoading ? (
+                  <CircularProgress size={30} thickness={4} value={100} />
+                ) : (
+                  "Verify OTP"
+                )}
               </button>
 
               <p className="w-full flex items-center flex-wrap gap-4 justify-center mt-5">

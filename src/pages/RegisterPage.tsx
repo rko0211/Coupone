@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import signupFrame from "../assets/signup.png";
-
+import axios from "axios";
 import EmailField from "../components/shared/EmailField";
 import PasswordField from "../components/shared/PasswordField";
 import PhoneNumberField from "../components/shared/PhoneNumberField";
-
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import CircularProgress from "@mui/material/CircularProgress";
+import { toast } from "react-toastify";
 type Inputs = {
+  usercountrycode: string;
   userphone: number;
   useremail: string;
   password: string;
@@ -26,9 +27,46 @@ const RegisterPage: React.FC = () => {
   });
   const password = watch("password");
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    navigate("/changeverificationmode");
+  const [isLoading, setLoading] = useState(false);
+  const URL = `https://coupone-backend.onrender.com`;
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    // console.log(data);
+
+    setLoading(true);
+    try {
+      // Send data to the backend using axios
+      const response = await axios.post(
+        `${URL}/users/sign-up`,
+        {
+          usercountrycode: data.usercountrycode,
+          userphone: data.userphone,
+          useremail: data.useremail,
+          password: data.password,
+          confirmPassword: data.confirmPassword,
+        },
+        { withCredentials: true }
+      );
+
+      // console.log("Response", response);
+
+      // console.log("response data", response.data);
+      // console.log("Response from server", response.data.user);
+      if (response.status === 200) {
+        toast.success(`${response.data.message}`);
+        navigate("/changeverificationmode");
+      } else if (response.status === 205) {
+        toast.warn("User with this email or phone already exists!");
+      } else if (response.status === 208) {
+        toast.warn("Passowrd and Confirm Password should be same");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error: unknown) {
+      console.error(error);
+      toast.error("Error occured while submitting the form. Please try again!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -140,7 +178,11 @@ const RegisterPage: React.FC = () => {
                 className="bg-customGreenColor text-center w-full rounded-[4px] text-white px-4 py-4 font-semibold lg:mt-9 customMax:mt-5"
                 disabled={isSubmitting}
               >
-                Sign Up
+                {isLoading ? (
+                  <CircularProgress size={30} thickness={4} value={100} />
+                ) : (
+                  "Sign Up"
+                )}
               </button>
             </div>
           </form>
