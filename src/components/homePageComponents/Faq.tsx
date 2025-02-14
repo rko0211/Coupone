@@ -33,7 +33,7 @@ function Faq() {
   ];
 
   return (
-    <div className="mt-10 w-[90%] mx-auto">
+    <div className="mt-10 w-[99%] sm:w-[90%] mx-auto">
       <SectionHeading heading="Frequently Asked Questions" />
       <div className="w-full  mt-10">
         <Accordion type="single" collapsible>
