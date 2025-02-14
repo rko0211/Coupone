@@ -65,22 +65,19 @@ const cardsItems: CardData[] = [
 
 const CashBackOffer: React.FC = () => {
   return (
-    <div className="mt-10 w-[90%] mx-auto">
+    <div className="mt-10 w-[99%] sm:w-[90%] mx-auto">
       <SectionHeading heading="High Cashback Offer" />
 
       <div>
         <Carousel
-          opts={{
-            align: "center",
-          }}
+          // opts={{
+          //   align: "center",
+          // }}
           className="w-full "
         >
-          <CarouselContent>
+          <CarouselContent className="flex">
             {cardsItems.map((item, index) => (
-              <CarouselItem
-                key={index}
-                className="w-full md:basis-1/2 lg:basis-1/4 mx-4"
-              >
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                 <div className="p-1 w-max">
                   <Card className="w-max">
                     <div
@@ -111,8 +108,8 @@ const CashBackOffer: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:block" />
+          <CarouselNext className="hidden sm:block" />
         </Carousel>
       </div>
     </div>

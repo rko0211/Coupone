@@ -1,6 +1,5 @@
 // import React from "react";
 
-import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -9,38 +8,31 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CardComponent from "../shared/CardComponent";
+import { Card } from "@/components/ui/card";
 
 const OfferSection: React.FC = () => {
   return (
-    <div className="mt-10 w-[90%] mx-auto">
+    <div className="mt-10 w-[99%] sm:w-[90%] mx-auto">
+      {/* Heading section */}
       <div className="font-['Poppins'] text-lg font-bold leading-[40px] text-left decoration-[underline-from-font] decoration-skip-ink-none text-[#404040] w-max block mb-8">
         Popular Offer Of The Day
         <br />
         <span className="w-full block h-1 bg-[#248D50]"></span>
       </div>
-
-      <Carousel
-        opts={{
-          align: "center",
-        }}
-        className="w-full"
-      >
-        <CarouselContent>
+      <Carousel className="w-full">
+        <CarouselContent className="flex">
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem
-              key={index}
-              className="w-full md:basis-1/3 lg:basis-1/4  mx-5"
-            >
-              <div className="p-1 ">
-                <Card className="w-max ">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 ">
+              <div className="p-1">
+                <Card className="w-max">
                   <CardComponent />
                 </Card>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden sm:block" />
+        <CarouselNext className="hidden sm:block" />
       </Carousel>
     </div>
   );

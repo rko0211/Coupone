@@ -30,7 +30,7 @@ const BrandSection: React.FC = () => {
     { id: 8, name: "Spotify", discount: "8%", img: brand6 },
   ];
   return (
-    <div className="mt-10 w-[90%] mx-auto">
+    <div className="mt-10 w-[99%] sm:w-[90%] mx-auto">
       <SectionHeading heading="Popular Brand" />
 
       <div className="bg-[#DAFFE9] p-6 rounded-[8px] flex flex-wrap gap-6">
@@ -69,18 +69,15 @@ const BrandSection: React.FC = () => {
         </div>
 
         <Carousel
-          opts={{
-            align: "center",
-          }}
+          // opts={{
+          //   align: "center",
+          // }}
           className="w-full md:hidden block"
         >
-          <CarouselContent>
+          <CarouselContent className="flex">
             {smallCards.map((item, index) => (
-              <CarouselItem
-                key={index}
-                className="w-full md:basis-1/2 lg:basis-1/4"
-              >
-                <div className="p-1 w-max">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <div className="p-1">
                   <Card className="w-max">
                     <CardContent
                       key={item.id}
@@ -104,8 +101,8 @@ const BrandSection: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:block" />
+          <CarouselNext className="hidden sm:block" />
         </Carousel>
       </div>
     </div>

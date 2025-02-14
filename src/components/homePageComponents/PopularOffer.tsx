@@ -121,7 +121,7 @@ const PopularOffer: React.FC = () => {
   ];
 
   return (
-    <div className="mt-10 w-[90%] mx-auto">
+    <div className="mt-10 w-[99%] sm:w-[90%] mx-auto">
       <SectionHeading heading="Popular Offer" />
       <div className="">
         {/* Tabs */}
@@ -148,17 +148,14 @@ const PopularOffer: React.FC = () => {
         </div>
         <div className="mt-4">
           <Carousel
-            opts={{
-              align: "center",
-            }}
+            // opts={{
+            //   align: "center",
+            // }}
             className="w-full "
           >
-            <CarouselContent>
+            <CarouselContent className="flex">
               {cards[activeTab]?.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className="w-full md:basis-1/2 lg:basis-1/4"
-                >
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                   <div className="p-1 w-max">
                     <Card className="w-max">
                       <div
@@ -185,8 +182,8 @@ const PopularOffer: React.FC = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden sm:block" />
+            <CarouselNext className="hidden sm:block" />
           </Carousel>
         </div>
       </div>
